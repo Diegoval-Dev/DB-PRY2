@@ -6,6 +6,7 @@ import userRoutes from './api/users';
 import restaurantRoutes from './api/restaurants';
 import menuItemRoutes from './api/menuItems';
 import orderRoutes from './api/orders';
+import reviewRoutes from './api/reviews';
 
 dotenv.config();
 
@@ -24,6 +25,7 @@ app.use('/api/users', userRoutes);
 app.use('/api/restaurants', restaurantRoutes);
 app.use('/api/menu-items', menuItemRoutes);
 app.use('/api/orders', orderRoutes);
+app.use('/api/reviews', reviewRoutes);
 
 
 const PORT = process.env.PORT || 3001;
