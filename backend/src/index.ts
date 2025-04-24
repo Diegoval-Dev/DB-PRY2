@@ -2,6 +2,8 @@ import express from 'express';
 import dotenv from 'dotenv';
 import cors from 'cors';
 import connectDB from './lib/db';
+import userRoutes from './api/users';
+import restaurantRoutes from './api/restaurants';
 
 dotenv.config();
 
@@ -15,6 +17,10 @@ connectDB();
 app.get('/', (_req, res) => {
   res.send('🚀 API REST funcionando');
 });
+
+app.use('/api/users', userRoutes);
+app.use('/api/restaurants', restaurantRoutes);
+
 
 const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
