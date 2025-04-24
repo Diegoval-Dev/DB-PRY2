@@ -4,6 +4,7 @@ import cors from 'cors';
 import connectDB from './lib/db';
 import userRoutes from './api/users';
 import restaurantRoutes from './api/restaurants';
+import menuItemRoutes from './api/menuItems';
 
 dotenv.config();
 
@@ -20,6 +21,7 @@ app.get('/', (_req, res) => {
 
 app.use('/api/users', userRoutes);
 app.use('/api/restaurants', restaurantRoutes);
+app.use('/api/menu-items', menuItemRoutes);
 
 
 const PORT = process.env.PORT || 3001;
