@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import * as restaurantService from '../services/restaurantService';
 
 export async function getAllRestaurants(req: Request, res: Response) {
@@ -55,5 +55,18 @@ export async function deleteRestaurant(req: Request, res: Response) {
     res.json({ message: 'Restaurant deleted successfully' });
   } catch (error) {
     res.status(500).json({ message: 'Error deleting restaurant', error });
+  }
+}
+
+export async function getNearbyRestaurants(req: Request, res: Response, next: NextFunction) {
+  try {
+    const lng = parseFloat(req.query.lng as string);
+    const lat = parseFloat(req.query.lat as string);
+    const maxDistance = parseInt(req.query.maxDistance as string, 10);
+
+    const list = await restaurantService.getNearbyRestaurants(lng, lat, maxDistance);
+    res.json(list);
+  } catch (error) {
+    next(error);
   }
 }
