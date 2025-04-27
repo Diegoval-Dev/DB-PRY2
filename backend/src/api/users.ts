@@ -7,6 +7,7 @@ import {
   updateUser,
   deleteUser
 } from '../controllers/userController';
+import { getOrdersByUser } from '../controllers/orderController';
 import { validate } from '../lib/validators';
 
 const router = Router();
@@ -21,6 +22,15 @@ router.get(
     param('id').isMongoId().withMessage('Invalid user ID')
   ]),
   getUserById
+);
+
+// GET /api/users/:id/orders
+router.get(
+  '/:id/orders',
+  validate([
+    param('id').isMongoId().withMessage('Invalid user ID')
+  ]),
+  getOrdersByUser
 );
 
 // POST /api/users

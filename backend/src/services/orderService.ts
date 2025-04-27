@@ -10,6 +10,11 @@ export async function getOrderById(id: string): Promise<Order | null> {
   return await OrderModel.findById(id);
 }
 
+export async function getOrdersByUser(userId: string): Promise<Order[]> {
+  if (!Types.ObjectId.isValid(userId)) return [];
+  return await OrderModel.find({ userId });
+}
+
 export async function createOrder(data: Partial<Order>): Promise<Order> {
   const order = new OrderModel(data);
   return await order.save();

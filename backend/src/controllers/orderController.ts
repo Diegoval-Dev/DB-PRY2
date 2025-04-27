@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction  } from 'express';
 import * as orderService from '../services/orderService';
 
 export async function getAllOrders(req: Request, res: Response) {
@@ -19,6 +19,15 @@ export async function getOrderById(req: Request, res: Response) {
     res.json(order);
   } catch (error) {
     res.status(500).json({ message: 'Error retrieving order', error });
+  }
+}
+
+export async function getOrdersByUser(req: Request, res: Response, next: NextFunction) {
+  try {
+    const orders = await orderService.getOrdersByUser(req.params.id);
+    res.json(orders);
+  } catch (error) {
+    next(error);
   }
 }
 
