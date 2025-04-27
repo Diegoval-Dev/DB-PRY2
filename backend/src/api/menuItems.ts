@@ -1,4 +1,7 @@
+// backend/src/api/menuItems.ts
+
 import { Router } from 'express';
+import { param, body } from 'express-validator';
 import {
   getAllMenuItems,
   getMenuItemById,
@@ -6,6 +9,7 @@ import {
   updateMenuItem,
   deleteMenuItem
 } from '../controllers/menuItemController';
+import { validate } from '../lib/validators';
 
 const router = Router();
 
@@ -13,15 +17,80 @@ const router = Router();
 router.get('/', getAllMenuItems);
 
 // GET /api/menu-items/:id
-router.get('/:id', getMenuItemById);
+router.get(
+  '/:id',
+  validate([
+    param('id')
+      .isMongoId()
+      .withMessage('Invalid menuItem ID')
+  ]),
+  getMenuItemById
+);
 
 // POST /api/menu-items
-router.post('/', createMenuItem);
+router.post(
+  '/',
+  validate([
+    body('restaurantId')
+      .isMongoId()
+      .withMessage('Invalid restaurant ID'),
+    body('name')
+      .isString().withMessage('Name must be a string')
+      .notEmpty().withMessage('Name is required'),
+    body('description')
+      .optional()
+      .isString().withMessage('Description must be a string'),
+    body('price')
+      .isFloat({ gt: 0 }).withMessage('Price must be a positive number'),
+    body('category')
+      .optional()
+      .isString().withMessage('Category must be a string'),
+    body('imageId')
+      .optional()
+      .isString().withMessage('Image ID must be a string')
+  ]),
+  createMenuItem
+);
 
 // PUT /api/menu-items/:id
-router.put('/:id', updateMenuItem);
+router.put(
+  '/:id',
+  validate([
+    param('id')
+      .isMongoId()
+      .withMessage('Invalid menuItem ID'),
+    body('restaurantId')
+      .optional()
+      .isMongoId()
+      .withMessage('Invalid restaurant ID'),
+    body('name')
+      .optional()
+      .isString().withMessage('Name must be a string'),
+    body('description')
+      .optional()
+      .isString().withMessage('Description must be a string'),
+    body('price')
+      .optional()
+      .isFloat({ gt: 0 }).withMessage('Price must be a positive number'),
+    body('category')
+      .optional()
+      .isString().withMessage('Category must be a string'),
+    body('imageId')
+      .optional()
+      .isString().withMessage('Image ID must be a string')
+  ]),
+  updateMenuItem
+);
 
 // DELETE /api/menu-items/:id
-router.delete('/:id', deleteMenuItem);
+router.delete(
+  '/:id',
+  validate([
+    param('id')
+      .isMongoId()
+      .withMessage('Invalid menuItem ID')
+  ]),
+  deleteMenuItem
+);
 
 export default router;

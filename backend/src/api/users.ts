@@ -1,4 +1,5 @@
 import { Router } from 'express';
+import { body, param } from 'express-validator';
 import {
   getAllUsers,
   getUserById,
@@ -6,7 +7,7 @@ import {
   updateUser,
   deleteUser
 } from '../controllers/userController';
-
+import { validate } from '../lib/validators';
 
 const router = Router();
 
@@ -14,15 +15,52 @@ const router = Router();
 router.get('/', getAllUsers);
 
 // GET /api/users/:id
-router.get('/:id', getUserById);
+router.get(
+  '/:id',
+  validate([
+    param('id').isMongoId().withMessage('Invalid user ID')
+  ]),
+  getUserById
+);
 
 // POST /api/users
-router.post('/', createUser);
+router.post(
+  '/',
+  validate([
+    body('name')
+      .isString().withMessage('Name must be a string')
+      .notEmpty().withMessage('Name is required'),
+    body('email')
+      .isEmail().withMessage('Must be a valid email'),
+    body('role')
+      .isIn(['cliente', 'admin', 'repartidor'])
+      .withMessage('Role must be cliente, admin or repartidor')
+  ]),
+  createUser
+);
 
 // PUT /api/users/:id
-router.put('/:id', updateUser);
+router.put(
+  '/:id',
+  validate([
+    param('id').isMongoId().withMessage('Invalid user ID'),
+    body('name').optional().isString().withMessage('Name must be a string'),
+    body('email').optional().isEmail().withMessage('Must be a valid email'),
+    body('role')
+      .optional()
+      .isIn(['cliente', 'admin', 'repartidor'])
+      .withMessage('Role must be cliente, admin or repartidor')
+  ]),
+  updateUser
+);
 
 // DELETE /api/users/:id
-router.delete('/:id', deleteUser);
+router.delete(
+  '/:id',
+  validate([
+    param('id').isMongoId().withMessage('Invalid user ID')
+  ]),
+  deleteUser
+);
 
 export default router;
