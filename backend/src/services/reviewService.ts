@@ -10,6 +10,20 @@ export async function getReviewById(id: string): Promise<Review | null> {
   return await ReviewModel.findById(id);
 }
 
+export async function getReviewsByRestaurant(
+  restaurantId: string
+): Promise<Review[]> {
+  if (!Types.ObjectId.isValid(restaurantId)) return [];
+  return await ReviewModel.find({ restaurantId });
+}
+
+export async function getReviewsByUser(
+  userId: string
+): Promise<Review[]> {
+  if (!Types.ObjectId.isValid(userId)) return [];
+  return await ReviewModel.find({ userId });
+}
+
 export async function createReview(data: Partial<Review>): Promise<Review> {
   const review = new ReviewModel(data);
   return await review.save();

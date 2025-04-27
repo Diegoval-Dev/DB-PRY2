@@ -10,6 +10,9 @@ import {
   deleteRestaurant,
   getNearbyRestaurants,
 } from '../controllers/restaurantController';
+import {
+  getReviewsByRestaurant
+} from '../controllers/reviewController';
 import { getMenuByRestaurant } from '../controllers/menuItemController';
 import { validate } from '../lib/validators';
 
@@ -43,6 +46,13 @@ router.get(
   validate([ param('id').isMongoId().withMessage('Invalid restaurant ID') ]),
   getMenuByRestaurant
 );
+
+router.get(
+  '/:id/reviews',
+  validate([param('id').isMongoId().withMessage('Invalid restaurant ID')]),
+  getReviewsByRestaurant
+);
+
 
 // POST /api/restaurants
 router.post(

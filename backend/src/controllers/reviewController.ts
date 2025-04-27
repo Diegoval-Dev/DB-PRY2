@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import * as reviewService from '../services/reviewService';
 
 export async function getAllReviews(req: Request, res: Response) {
@@ -7,6 +7,32 @@ export async function getAllReviews(req: Request, res: Response) {
     res.json(reviews);
   } catch (error) {
     res.status(500).json({ message: 'Error retrieving reviews', error });
+  }
+}
+
+export async function getReviewsByRestaurant(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    const reviews = await reviewService.getReviewsByRestaurant(req.params.id);
+    res.json(reviews);
+  } catch (error) {
+    next(error);
+  }
+}
+
+export async function getReviewsByUser(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    const reviews = await reviewService.getReviewsByUser(req.params.id);
+    res.json(reviews);
+  } catch (error) {
+    next(error);
   }
 }
 

@@ -9,7 +9,9 @@ import {
 } from '../controllers/userController';
 import { getOrdersByUser } from '../controllers/orderController';
 import { validate } from '../lib/validators';
-
+import {
+  getReviewsByUser
+} from '../controllers/reviewController';
 const router = Router();
 
 // GET /api/users
@@ -32,6 +34,13 @@ router.get(
   ]),
   getOrdersByUser
 );
+
+router.get(
+  '/:id/reviews',
+  validate([param('id').isMongoId().withMessage('Invalid user ID')]),
+  getReviewsByUser
+);
+
 
 // POST /api/users
 router.post(
