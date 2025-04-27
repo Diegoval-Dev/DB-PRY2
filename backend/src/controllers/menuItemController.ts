@@ -1,4 +1,4 @@
-import { Request, Response } from 'express';
+import { Request, Response, NextFunction } from 'express';
 import * as menuItemService from '../services/menuItemService';
 
 export async function getAllMenuItems(req: Request, res: Response) {
@@ -17,6 +17,15 @@ export async function getMenuItemById(req: Request, res: Response) {
     res.json(item);
   } catch (error) {
     res.status(500).json({ message: 'Error retrieving menu item', error });
+  }
+}
+
+export async function getMenuByRestaurant(req: Request, res: Response, next: NextFunction) {
+  try {
+    const items = await menuItemService.getMenuItemsByRestaurant(req.params.id);
+    res.json(items);
+  } catch (err) {
+    next(err);
   }
 }
 

@@ -8,8 +8,9 @@ import {
   createRestaurant,
   updateRestaurant,
   deleteRestaurant,
-  getNearbyRestaurants
+  getNearbyRestaurants,
 } from '../controllers/restaurantController';
+import { getMenuByRestaurant } from '../controllers/menuItemController';
 import { validate } from '../lib/validators';
 
 const router = Router();
@@ -35,6 +36,12 @@ router.get(
   '/:id',
   validate([param('id').isMongoId().withMessage('Invalid restaurant ID')]),
   getRestaurantById
+);
+
+router.get(
+  '/:id/menu',
+  validate([ param('id').isMongoId().withMessage('Invalid restaurant ID') ]),
+  getMenuByRestaurant
 );
 
 // POST /api/restaurants

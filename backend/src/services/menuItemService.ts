@@ -10,6 +10,13 @@ export async function getMenuItemById(id: string): Promise<MenuItem | null> {
   return await MenuItemModel.findById(id);
 }
 
+export async function getMenuItemsByRestaurant(
+  restaurantId: string
+): Promise<MenuItem[]> {
+  if (!Types.ObjectId.isValid(restaurantId)) return [];
+  return await MenuItemModel.find({ restaurantId });
+}
+
 export async function createMenuItem(data: Partial<MenuItem>): Promise<MenuItem> {
   const menuItem = new MenuItemModel(data);
   return await menuItem.save();
