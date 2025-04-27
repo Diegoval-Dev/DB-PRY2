@@ -9,6 +9,7 @@ import orderRoutes from './api/orders';
 import reviewRoutes from './api/reviews';
 import { errorHandler } from './lib/errorHandler';
 import fileRoutes from './api/files';
+import reportRoutes from './api/reports';
 
 dotenv.config();
 
@@ -29,6 +30,7 @@ app.use('/api/menu-items', menuItemRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/reviews', reviewRoutes);
 app.use('/api/files', fileRoutes);
+app.use('/api/reports', reportRoutes);
 
 app.use(errorHandler);
 
