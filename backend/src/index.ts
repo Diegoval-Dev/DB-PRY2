@@ -8,6 +8,7 @@ import menuItemRoutes from './api/menuItems';
 import orderRoutes from './api/orders';
 import reviewRoutes from './api/reviews';
 import { errorHandler } from './lib/errorHandler';
+import fileRoutes from './api/files';
 
 dotenv.config();
 
@@ -27,6 +28,7 @@ app.use('/api/restaurants', restaurantRoutes);
 app.use('/api/menu-items', menuItemRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/reviews', reviewRoutes);
+app.use('/api/files', fileRoutes);
 
 app.use(errorHandler);
 
