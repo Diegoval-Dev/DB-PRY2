@@ -46,8 +46,6 @@
 
 - **Cancelación de pedido**:  
   - Antes de “enviado”, el cliente puede cancelar. Se actualiza `status` a “cancelado” y notifica.  
-- **Stock insuficiente**:  
-  - Si un platillo no está disponible, se impide la confirmación hasta ajustar cantidades.  
 - **Error en actualización**:  
   - Ante conflictos al cambiar estado, se registra error e informa al administrador.  
 

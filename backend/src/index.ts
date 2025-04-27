@@ -7,6 +7,7 @@ import restaurantRoutes from './api/restaurants';
 import menuItemRoutes from './api/menuItems';
 import orderRoutes from './api/orders';
 import reviewRoutes from './api/reviews';
+import { errorHandler } from './lib/errorHandler';
 
 dotenv.config();
 
@@ -26,6 +27,8 @@ app.use('/api/restaurants', restaurantRoutes);
 app.use('/api/menu-items', menuItemRoutes);
 app.use('/api/orders', orderRoutes);
 app.use('/api/reviews', reviewRoutes);
+
+app.use(errorHandler);
 
 
 const PORT = process.env.PORT || 3001;

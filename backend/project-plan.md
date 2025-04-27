@@ -121,78 +121,78 @@ This project involves developing a Restaurant Order and Review Management System
 ## 4. Backend Implementation Tasks
 
 ### Core Structure Setup
-- [x] Initialize Express application with TypeScript
-- [x] Set up MongoDB connection
-- [ ] Configure environment variables
-- [ ] Implement basic middleware (CORS, JSON parsing)
-- [ ] Set up error handling middleware
+- [x] Initialize Express application with TypeScript  
+- [x] Set up MongoDB connection  
+- [x] Configure environment variables  
+- [x] Implement basic middleware (CORS, JSON parsing)  
+- [ ] Set up error handling middleware  
 
 ### Models Implementation
-- [x] Define User model
-- [x] Define Restaurant model
-- [x] Define MenuItem model
-- [x] Define Order model
-- [x] Define Review model
-- [ ] Implement required indexes on all models
+- [x] Define User model  
+- [x] Define Restaurant model  
+- [x] Define MenuItem model  
+- [x] Define Order model  
+- [x] Define Review model  
+- [x] Implement required indexes on all models  
 
 ### API Endpoints
 
 #### User Management
-- [ ] `POST /api/users` - Register a new user
-- [ ] `GET /api/users/:id` - Get user details
-- [ ] `PUT /api/users/:id` - Update user profile
-- [ ] `DELETE /api/users/:id` - Delete user account
-- [ ] `GET /api/users` - List users (with pagination, filters)
+- [x] `POST /api/users` - Register a new user  
+- [x] `GET /api/users/:id` - Get user details  
+- [x] `PUT /api/users/:id` - Update user profile  
+- [x] `DELETE /api/users/:id` - Delete user account  
+- [x] `GET /api/users` - List users (with pagination, filters)  
 
 #### Restaurant Management
-- [ ] `POST /api/restaurants` - Create a new restaurant
-- [ ] `GET /api/restaurants/:id` - Get restaurant details
-- [ ] `PUT /api/restaurants/:id` - Update restaurant info
-- [ ] `DELETE /api/restaurants/:id` - Delete a restaurant
-- [ ] `GET /api/restaurants` - List restaurants (with filtering, sorting)
-- [ ] `GET /api/restaurants/nearby` - Find restaurants by geolocation
+- [x] `POST /api/restaurants` - Create a new restaurant  
+- [x] `GET /api/restaurants/:id` - Get restaurant details  
+- [x] `PUT /api/restaurants/:id` - Update restaurant info  
+- [x] `DELETE /api/restaurants/:id` - Delete a restaurant  
+- [x] `GET /api/restaurants` - List restaurants (with filtering, sorting)  
+- [ ] `GET /api/restaurants/nearby` - Find restaurants by geolocation  
 
 #### Menu Items Management
-- [ ] `POST /api/menu-items` - Add a new menu item
-- [ ] `GET /api/menu-items/:id` - Get menu item details
-- [ ] `PUT /api/menu-items/:id` - Update menu item
-- [ ] `DELETE /api/menu-items/:id` - Delete menu item
-- [ ] `GET /api/menu-items` - List menu items (with filtering by restaurant, category)
-- [ ] `GET /api/restaurants/:id/menu` - Get all menu items for a restaurant
+- [x] `POST /api/menu-items` - Add a new menu item  
+- [x] `GET /api/menu-items/:id` - Get menu item details  
+- [x] `PUT /api/menu-items/:id` - Update menu item  
+- [x] `DELETE /api/menu-items/:id` - Delete menu item  
+- [x] `GET /api/menu-items` - List menu items (with filtering by restaurant, category)  
+- [ ] `GET /api/restaurants/:id/menu` - Get all menu items for a restaurant  
 
 #### Order Management
-- [ ] `POST /api/orders` - Create a new order
-- [ ] `GET /api/orders/:id` - Get order details
-- [ ] `PUT /api/orders/:id` - Update order status
-- [ ] `DELETE /api/orders/:id` - Cancel an order
-- [ ] `GET /api/orders` - List orders (with filtering by user, restaurant, status)
-- [ ] `GET /api/users/:id/orders` - Get user's order history
+- [x] `POST /api/orders` - Create a new order  
+- [x] `GET /api/orders/:id` - Get order details  
+- [x] `PUT /api/orders/:id` - Update order status  
+- [x] `DELETE /api/orders/:id` - Cancel an order  
+- [x] `GET /api/orders` - List orders (with filtering by user, restaurant, status)  
+- [ ] `GET /api/users/:id/orders` - Get user's order history  
 
 #### Review Management
-- [ ] `POST /api/reviews` - Create a new review
-- [ ] `GET /api/reviews/:id` - Get review details
-- [ ] `PUT /api/reviews/:id` - Update a review
-- [ ] `DELETE /api/reviews/:id` - Delete a review
-- [ ] `GET /api/reviews` - List reviews (with filtering by restaurant, rating)
-- [ ] `GET /api/restaurants/:id/reviews` - Get all reviews for a restaurant
-- [ ] `GET /api/users/:id/reviews` - Get all reviews by a user
+- [x] `POST /api/reviews` - Create a new review  
+- [x] `GET /api/reviews/:id` - Get review details  
+- [x] `PUT /api/reviews/:id` - Update a review  
+- [x] `DELETE /api/reviews/:id` - Delete a review  
+- [x] `GET /api/reviews` - List reviews (with filtering by restaurant, rating)  
+- [ ] `GET /api/restaurants/:id/reviews` - Get all reviews for a restaurant  
+- [ ] `GET /api/users/:id/reviews` - Get all reviews by a user  
 
 #### File Management (GridFS)
-- [ ] `POST /api/files/upload` - Upload a file (image)
-- [ ] `GET /api/files/:id` - Retrieve a file
-- [ ] `DELETE /api/files/:id` - Delete a file
+- [ ] `POST /api/files/upload` - Upload a file (image)  
+- [ ] `GET /api/files/:id` - Retrieve a file  
+- [ ] `DELETE /api/files/:id` - Delete a file  
 
 ### Aggregation Pipelines
-- [ ] Top-rated restaurants report
-- [ ] Most ordered menu items report
-- [ ] Restaurant sales report
-- [ ] User order frequency report
-- [ ] Average ratings by restaurant category
+- [ ] Top-rated restaurants report  
+- [ ] Most ordered menu items report  
+- [ ] Restaurant sales report  
+- [ ] User order frequency report  
+- [ ] Average ratings by restaurant category  
 
 ### Data Imports
-- [ ] Create seed data for all collections
-- [ ] Implement mongoimport scripts for initial data load
-- [ ] Create a collection with 50,000+ documents for GridFS demonstration
+- [ ] Create seed data for all collections  
+- [ ] Implement mongoimport scripts for initial data load  
+- [ ] Create a collection with 50,000+ documents for GridFS demonstration  
 
 ## 5. Frontend Implementation Tasks
 
