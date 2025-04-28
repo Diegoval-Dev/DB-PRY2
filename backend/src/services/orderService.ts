@@ -32,3 +32,24 @@ export async function deleteOrder(id: string): Promise<Order | null> {
   if (!Types.ObjectId.isValid(id)) return null;
   return await OrderModel.findByIdAndDelete(id);
 }
+
+export async function bulkUpdateOrderStatus(
+  ids: string[],
+  status: string
+): Promise<any> {
+  const validIds = ids.filter((id) => Types.ObjectId.isValid(id));
+  if (validIds.length === 0) return { matchedCount: 0, modifiedCount: 0 };
+
+  const ops = validIds.map((id) => ({
+    updateOne: {
+      filter: { _id: new Types.ObjectId(id) },
+      update: { $set: { status } }
+    }
+  }));
+
+  const result = await OrderModel.bulkWrite(ops);
+  return {
+    matchedCount: result.matchedCount,
+    modifiedCount: result.modifiedCount
+  };
+}

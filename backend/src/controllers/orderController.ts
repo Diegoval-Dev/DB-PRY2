@@ -63,3 +63,17 @@ export async function deleteOrder(req: Request, res: Response) {
     res.status(500).json({ message: 'Error deleting order', error });
   }
 }
+
+export async function bulkUpdateOrderStatus(
+  req: Request,
+  res: Response,
+  next: NextFunction
+) {
+  try {
+    const { ids, status } = req.body;
+    const result = await orderService.bulkUpdateOrderStatus(ids, status);
+    res.json({ message: 'Bulk update completed', ...result });
+  } catch (error) {
+    next(error);
+  }
+}

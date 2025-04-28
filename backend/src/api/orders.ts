@@ -7,7 +7,8 @@ import {
   getOrderById,
   createOrder,
   updateOrder,
-  deleteOrder
+  deleteOrder,
+  bulkUpdateOrderStatus
 } from '../controllers/orderController';
 import { validate } from '../lib/validators';
 
@@ -102,6 +103,25 @@ router.put(
       .withMessage('Each item quantity must be an integer greater than 0')
   ]),
   updateOrder
+);
+
+// POST /api/orders/bulk-update-status
+router.post(
+  '/bulk-update-status',
+  validate([
+    body('ids')
+      .isArray({ min: 1 })
+      .withMessage('ids must be a non-empty array'),
+    body('ids.*')
+      .isMongoId()
+      .withMessage('Each id must be a valid Mongo ID'),
+    body('status')
+      .isString()
+      .withMessage('status must be a string')
+      .notEmpty()
+      .withMessage('status is required')
+  ]),
+  bulkUpdateOrderStatus
 );
 
 // DELETE /api/orders/:id
