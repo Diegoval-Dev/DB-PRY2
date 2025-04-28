@@ -18,6 +18,9 @@ const MenuItemSchema = new Schema<MenuItem>({
   imageId: String
 });
 
+MenuItemSchema.index({ restaurantId: 1, category: 1 });   
+MenuItemSchema.index({ price: 1 });   
+
 MenuItemSchema.index({ restaurantId: 1, category: 1 });
 
 export default model<MenuItem>('MenuItem', MenuItemSchema);

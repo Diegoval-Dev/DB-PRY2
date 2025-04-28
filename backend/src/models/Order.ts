@@ -28,6 +28,8 @@ const OrderSchema = new Schema<Order>({
   ]
 });
 
-OrderSchema.index({ 'items.menuItemId': 1 });
+OrderSchema.index({ 'items.menuItemId': 1 });   
+OrderSchema.index({ userId: 1, date: -1 });      
+
 
 export default model<Order>('Order', OrderSchema);

@@ -14,4 +14,7 @@ const UserSchema = new Schema<User>({
   registrationDate: { type: Date, default: Date.now }
 });
 
+UserSchema.index({ email: 1 });                                   
+UserSchema.index({ role: 1, registrationDate: -1 });            
+
 export default model<User>('User', UserSchema);

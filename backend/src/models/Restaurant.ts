@@ -22,6 +22,9 @@ const RestaurantSchema = new Schema<Restaurant>({
   imageIds: [String]
 });
 
+RestaurantSchema.index({ location: '2dsphere' });      
+RestaurantSchema.index({ specialties: 1 });    
+
 RestaurantSchema.index({ location: '2dsphere' });
 
 export default model<Restaurant>('Restaurant', RestaurantSchema);

@@ -19,5 +19,6 @@ const ReviewSchema = new Schema<Review>({
 });
 
 ReviewSchema.index({ comment: 'text' });
+ReviewSchema.index({ rating: 1, date: -1 });     
 
 export default model<Review>('Review', ReviewSchema);
