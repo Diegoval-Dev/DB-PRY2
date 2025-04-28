@@ -8,7 +8,8 @@
     "dev": "ts-node-dev --respawn --transpile-only src/index.ts",
     "seed": "ts-node-dev --respawn --transpile-only scripts/seed.ts",
     "build": "tsc",
-    "start": "node dist/index.js"
+    "start": "node dist/index.js",
+    "import:data": "mongoimport --uri=\"$MONGO_URI\" --drop --jsonArray --file=data/users.json --collection=users && mongoimport --uri=\"$MONGO_URI\" --drop --jsonArray --file=data/restaurants.json --collection=restaurants && mongoimport --uri=\"$MONGO_URI\" --drop --jsonArray --file=data/menuItems.json --collection=menuitems && mongoimport --uri=\"$MONGO_URI\" --drop --jsonArray --file=data/orders.json --collection=orders && mongoimport --uri=\"$MONGO_URI\" --drop --jsonArray --file=data/reviews.json --collection=reviews"
   },
   "keywords": [],
   "author": "",
