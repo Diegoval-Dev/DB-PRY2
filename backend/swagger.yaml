@@ -2,412 +2,17 @@ openapi: 3.0.1
 info:
   title: GercoRaunte REST API
   version: 1.0.0
-  description: |
-    API for Restaurant Order & Review Management System.
-    Provides endpoints for authentication, users, restaurants, menu items, orders, reviews, files, reports, and bulk operations.
 servers:
-  - url: https://api.yourdomain.com
-    description: Production server
   - url: http://localhost:3001
-    description: Local development
 
 components:
-  securitySchemes:
-    BearerAuth:
-      type: http
-      scheme: bearer
-      bearerFormat: JWT
-
   schemas:
-    User:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        name:
-          type: string
-        email:
-          type: string
-          format: email
-        role:
-          type: string
-          enum: [cliente, admin, repartidor]
-        registrationDate:
-          type: string
-          format: date-time
-    Restaurant:
-      type: object
-      properties:
-        id:
-          type: string
-          format: uuid
-        name:
-          type: string
-        address:
-          type: string
-        location:
-          type: object
-          properties:
-            type:
-              type: string
-              enum: [Point]
-            coordinates:
-              type: array
-              items:
-                type: number
-        specialties:
-          type: array
-          items:
-            type: string
-        imageIds:
-          type: array
-          items:
-            type: string
-    MenuItem:
-      type: object
-      properties:
-        id:
-          type: string
-        restaurantId:
-          type: string
-        name:
-          type: string
-        description:
-          type: string
-        price:
-          type: number
-        category:
-          type: string
-        imageId:
-          type: string
-    Order:
-      type: object
-      properties:
-        id:
-          type: string
-        userId:
-          type: string
-        restaurantId:
-          type: string
-        date:
-          type: string
-          format: date-time
-        status:
-          type: string
-        total:
-          type: number
-        items:
-          type: array
-          items:
-            type: object
-            properties:
-              menuItemId:
-                type: string
-              quantity:
-                type: integer
-    Review:
-      type: object
-      properties:
-        id:
-          type: string
-        userId:
-          type: string
-        restaurantId:
-          type: string
-        orderId:
-          type: string
-        rating:
-          type: integer
-          minimum: 1
-          maximum: 5
-        comment:
-          type: string
-        date:
-          type: string
-          format: date-time
     Error:
       type: object
       properties:
         error:
           type: string
 
-paths:
-  /api/auth/register:
-    post:
-      summary: Register new user
-      tags: [Auth]
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [name, email, password, role]
-              properties:
-                name:   { type: string }
-                email:  { type: string, format: email }
-                password: { type: string, minLength: 6 }
-                role:   { type: string, enum: [cliente, admin, repartidor] }
-      responses:
-        '201':
-          description: User created
-          content:
-            application/json:
-              schema:
-                $ref: '#/components/schemas/User'
-        '400':
-          $ref: '#/components/responses/BadRequest'
-  /api/auth/login:
-    post:
-      summary: Authenticate user and return JWT
-      tags: [Auth]
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              type: object
-              required: [email, password]
-              properties:
-                email:    { type: string, format: email }
-                password: { type: string }
-      responses:
-        '200':
-          description: Authentication success
-          content:
-            application/json:
-              schema:
-                type: object
-                properties:
-                  token:
-                    type: string
-                  user:
-                    $ref: '#/components/schemas/User'
-        '401':
-          $ref: '#/components/responses/Unauthorized'
-
-  /api/users:
-    get:
-      summary: List all users
-      tags: [Users]
-      security:
-        - BearerAuth: []
-      responses:
-        '200':
-          description: Array of users
-          content:
-            application/json:
-              schema:
-                type: array
-                items:
-                  $ref: '#/components/schemas/User'
-    post:
-      summary: Create a new user
-      tags: [Users]
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/User'
-      responses:
-        '201':
-          $ref: '#/components/schemas/User'
-
-  /api/users/{id}:
-    parameters:
-      - name: id
-        in: path
-        required: true
-        schema:
-          type: string
-    get:
-      summary: Get user by ID
-      tags: [Users]
-      responses:
-        '200':
-          $ref: '#/components/schemas/User'
-        '404':
-          $ref: '#/components/responses/NotFound'
-    put:
-      summary: Update user
-      tags: [Users]
-      requestBody:
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/User'
-      responses:
-        '200':
-          $ref: '#/components/schemas/User'
-    delete:
-      summary: Delete user
-      tags: [Users]
-      responses:
-        '200':
-          description: User deleted
-
-  /api/restaurants:
-    get:
-      summary: List restaurants
-      tags: [Restaurants]
-      responses:
-        '200':
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Restaurant'
-    post:
-      summary: Create restaurant
-      tags: [Restaurants]
-      security:
-        - BearerAuth: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Restaurant'
-      responses:
-        '201':
-          $ref: '#/components/schemas/Restaurant'
-
-  /api/restaurants/nearby:
-    get:
-      summary: Get nearby restaurants
-      tags: [Restaurants]
-      parameters:
-        - in: query
-          name: lng
-          schema: { type: number }
-        - in: query
-          name: lat
-          schema: { type: number }
-        - in: query
-          name: maxDistance
-          schema: { type: integer }
-      responses:
-        '200':
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Restaurant'
-
-  /api/menu-items:
-    get:
-      summary: List menu items
-      tags: [MenuItems]
-      responses:
-        '200':
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/MenuItem'
-    post:
-      summary: Create menu item
-      tags: [MenuItems]
-      security:
-        - BearerAuth: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/MenuItem'
-      responses:
-        '201':
-          $ref: '#/components/schemas/MenuItem'
-
-  /api/orders:
-    get:
-      summary: List orders
-      tags: [Orders]
-      security:
-        - BearerAuth: []
-      responses:
-        '200':
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Order'
-    post:
-      summary: Create order
-      tags: [Orders]
-      security:
-        - BearerAuth: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Order'
-      responses:
-        '201':
-          $ref: '#/components/schemas/Order'
-
-  /api/reviews:
-    get:
-      summary: List reviews
-      tags: [Reviews]
-      responses:
-        '200':
-          schema:
-            type: array
-            items:
-              $ref: '#/components/schemas/Review'
-    post:
-      summary: Create review
-      tags: [Reviews]
-      security:
-        - BearerAuth: []
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema:
-              $ref: '#/components/schemas/Review'
-      responses:
-        '201':
-          $ref: '#/components/schemas/Review'
-
-  /api/files/upload:
-    post:
-      summary: Upload a file to GridFS
-      tags: [Files]
-      requestBody:
-        content:
-          multipart/form-data:
-            schema:
-              type: object
-              properties:
-                file:
-                  type: string
-                  format: binary
-      responses:
-        '201':
-          description: File uploaded
-
-  /api/reports/top-rated-restaurants:
-    get:
-      summary: Top rated restaurants report
-      tags: [Reports]
-      parameters:
-        - in: query
-          name: limit
-          schema: { type: integer }
-      responses:
-        '200':
-          schema:
-            type: array
-            items:
-              type: object
-              properties:
-                restaurantId: { type: string }
-                name:         { type: string }
-                avgRating:    { type: number }
-
-components:
   responses:
     BadRequest:
       description: Validation error
@@ -427,3 +32,106 @@ components:
         application/json:
           schema:
             $ref: '#/components/schemas/Error'
+
+paths:
+  /api/auth/register:
+    post:
+      summary: Register new user
+      responses:
+        '201':
+          description: User created successfully
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  /api/auth/login:
+    post:
+      summary: Authenticate user
+      responses:
+        '200':
+          description: Authentication success
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  token:
+                    type: string
+                  user:
+                    $ref: '#/components/schemas/User'
+        '401':
+          $ref: '#/components/responses/Unauthorized'
+
+  /api/users/{id}:
+    parameters:
+      - name: id
+        in: path
+        required: true
+        schema:
+          type: string
+    get:
+      summary: Get user by ID
+      responses:
+        '200':
+          description: User found
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/User'
+        '404':
+          $ref: '#/components/responses/NotFound'
+
+  /api/restaurants:
+    get:
+      summary: List all restaurants
+      responses:
+        '200':
+          description: Array of restaurants
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Restaurant'
+    post:
+      summary: Create a restaurant
+      responses:
+        '201':
+          description: Restaurant created
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Restaurant'
+        '400':
+          $ref: '#/components/responses/BadRequest'
+
+  /api/restaurants/nearby:
+    get:
+      summary: Find nearby restaurants
+      parameters:
+        - in: query
+          name: lng
+          schema:
+            type: number
+        - in: query
+          name: lat
+          schema:
+            type: number
+        - in: query
+          name: maxDistance
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Nearby restaurants list
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Restaurant'
+        '400':
+          $ref: '#/components/responses/BadRequest'
