@@ -10,10 +10,16 @@ import dotenv from 'dotenv';
 
 dotenv.config();
 
-const MONGO_URI = process.env.MONGO_URI as string;
+
 
 async function main() {
-  await mongoose.connect(MONGO_URI);
+  const MONGO_URI = process.env.MONGO_URI as string;
+  console.log('🔵 Seeding database...', MONGO_URI);
+  await mongoose.connect(MONGO_URI, {
+    dbName: 'gercoraunte',          
+    serverSelectionTimeoutMS: 5000,  
+    socketTimeoutMS: 45000
+  });
   console.log('🟢 Connected to MongoDB for seeding');
 
   // Limpia colecciones
@@ -30,6 +36,7 @@ async function main() {
   const users = Array.from({ length: 100 }).map(() => ({
     name: faker.person.fullName(),
     email: faker.internet.email(),
+    password: faker.internet.password({ length: 8 }),
     role: faker.helpers.arrayElement(['cliente','admin','repartidor']),
     registrationDate: faker.date.past({ years: 1 })
   }));
