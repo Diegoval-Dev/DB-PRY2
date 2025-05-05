@@ -6,7 +6,7 @@ import RestaurantHero from './RestaurantHero';
 import MenuItemCard from './MenuItemCard';
 import CategoryTabs from './CategoryTabs';
 import { useState } from 'react';
-import FloatingCart from '@/components/FloatingCart';
+import RestaurantReviews from './RestaurantReviews';
 
 export default function RestaurantDetailPage() {
   const { id } = useParams();
@@ -38,7 +38,7 @@ export default function RestaurantDetailPage() {
           ))}
         </div>
       </div>
-      <FloatingCart />
+      <RestaurantReviews restaurantId={restaurant._id} />
     </div>
   );
 }
