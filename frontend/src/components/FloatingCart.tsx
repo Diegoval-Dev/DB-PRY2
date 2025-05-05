@@ -12,7 +12,7 @@ export default function FloatingCart() {
   return (
     <div className="fixed bottom-4 left-1/2 transform -translate-x-1/2 z-50">
       <button
-        onClick={() => router.push('/cliente/carrito')}
+        onClick={() => router.push('/client/cart')}
         className="bg-[#FF6F61] hover:bg-[#E5645A] text-white px-6 py-3 rounded-full shadow-lg text-sm font-medium"
       >
         Ver Carrito – {itemCount} ítems · Q{total.toFixed(2)}

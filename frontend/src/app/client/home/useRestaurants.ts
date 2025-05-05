@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 interface Restaurant {
-  id: string;
+  _id: string;
   name: string;
   address: string;
   specialties: string[];

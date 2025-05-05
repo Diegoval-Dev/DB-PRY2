@@ -2,6 +2,7 @@ import { create } from 'zustand';
 import { persist } from 'zustand/middleware';
 
 interface User {
+  id: string;
   name: string;
   email: string;
   role: 'cliente' | 'admin' | 'repartidor';
@@ -23,7 +24,7 @@ export const useAuth = create<AuthState>()(
       logout: () => set({ token: null, user: null }),
     }),
     {
-      name: 'gerco-auth', // clave de localStorage
+      name: 'gerco-auth',
     }
   )
 );

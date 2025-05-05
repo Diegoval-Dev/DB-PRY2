@@ -23,7 +23,7 @@ export default function RestaurantDetailPage() {
     : menuItems;
 
   return (
-    <div className="pb-32">
+    <div className="pb-32 bg-white min-h-screen">
       <RestaurantHero restaurant={restaurant} />
       <div className="px-6 pt-4">
         <CategoryTabs
@@ -34,7 +34,7 @@ export default function RestaurantDetailPage() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
           {filteredItems.map((item) => (
-            <MenuItemCard key={item.id} item={item} />
+            <MenuItemCard key={item._id} item={item} restaurantId={restaurant._id} />
           ))}
         </div>
       </div>

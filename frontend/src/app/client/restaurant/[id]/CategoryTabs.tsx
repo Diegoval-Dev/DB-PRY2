@@ -10,7 +10,7 @@ interface Props {
         <button
           onClick={() => onChange(null)}
           className={`py-1 px-4 rounded-full ${
-            active === null ? 'bg-[#FF6F61] text-white' : 'bg-gray-200'
+            active === null ? 'bg-[#FF6F61] text-white' : 'bg-gray-200 text-gray-400'
           }`}
         >
           Todos
@@ -20,7 +20,7 @@ interface Props {
             key={cat}
             onClick={() => onChange(cat)}
             className={`py-1 px-4 rounded-full ${
-              active === cat ? 'bg-[#FF6F61] text-white' : 'bg-gray-200'
+              active === cat ? 'bg-[#FF6F61] text-white' : 'bg-gray-200 text-gray-400'
             }`}
           >
             {cat}

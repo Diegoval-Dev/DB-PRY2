@@ -5,11 +5,14 @@ import { useAuth } from '@/store/useAuth';
 import { useRouter } from 'next/navigation';
 import { useRestaurants } from './useRestaurants';
 import RestaurantCard from './RestaurantCard';
+import Link from 'next/link';
 
 export default function ClientHomePage() {
   const { user, token } = useAuth();
   const router = useRouter();
   const { restaurants, loading, error } = useRestaurants(token);
+
+  console.log(restaurants)
 
   useEffect(() => {
     if (!user || user.role !== 'cliente') {
@@ -26,7 +29,7 @@ export default function ClientHomePage() {
 
       <div className="grid gap-6 grid-cols-1 sm:grid-cols-2 md:grid-cols-3">
         {restaurants.map((r) => (
-          <RestaurantCard key={r.id} restaurant={r} />
+          <RestaurantCard key={r._id} restaurant={r} />
         ))}
       </div>
     </div>

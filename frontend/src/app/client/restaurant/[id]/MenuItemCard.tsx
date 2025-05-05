@@ -2,15 +2,16 @@ import { useCart } from '@/store/useCart';
 
 interface Props {
   item: {
-    id: string;
+    _id: string;
     name: string;
     description: string;
     price: number;
     imageId?: string;
   };
+  restaurantId: string;
 }
 
-export default function MenuItemCard({ item }: Props) {
+export default function MenuItemCard({ item, restaurantId }: Props) {
   const { addItem } = useCart();
 
   return (
@@ -26,7 +27,8 @@ export default function MenuItemCard({ item }: Props) {
           className="text-sm bg-[#4CAF50] text-white px-3 py-1 rounded hover:bg-green-600"
           onClick={() =>
             addItem({
-              menuItemId: item.id,
+              menuItemId: item._id,
+              restaurantId,
               name: item.name,
               price: item.price,
               quantity: 1,
@@ -34,6 +36,7 @@ export default function MenuItemCard({ item }: Props) {
           }
         >
           Agregar
+
         </button>
       </div>
     </div>

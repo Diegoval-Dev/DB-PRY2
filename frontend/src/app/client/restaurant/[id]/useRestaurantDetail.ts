@@ -1,5 +1,7 @@
+// filepath: frontend/src/app/client/restaurant/[id]/useRestaurantDetail.ts
 import { useEffect, useState } from 'react';
 import { useAuth } from '@/store/useAuth';
+import { Console } from 'console';
 
 export function useRestaurantDetail(restaurantId: string) {
   const { token } = useAuth();
@@ -10,16 +12,16 @@ export function useRestaurantDetail(restaurantId: string) {
 
   useEffect(() => {
     if (!token || !restaurantId) return;
+    setLoading(true);
+    setError('');
+
+    const headers = { Authorization: `Bearer ${token}` };
+    const restaurantUrl = `${process.env.NEXT_PUBLIC_API_URL}/api/restaurants/${restaurantId}`;
+    const menuUrl       = `${process.env.NEXT_PUBLIC_API_URL}/api/menu-items?restaurantId=${restaurantId}`;
 
     Promise.all([
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/restaurants`, {
-        headers: { Authorization: `Bearer ${token}` },
-      })
-        .then((res) => res.json())
-        .then((list) => list.find((r: any) => r.id === restaurantId)),
-      fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/menu-items?restaurantId=${restaurantId}`, {
-        headers: { Authorization: `Bearer ${token}` },
-      }).then((res) => res.json()),
+      fetch(restaurantUrl, { headers }).then((res) => res.json()),
+      fetch(menuUrl,       { headers }).then((res) => res.json()),
     ])
       .then(([r, m]) => {
         setRestaurant(r);
