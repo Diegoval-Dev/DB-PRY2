@@ -70,10 +70,12 @@ export default function CartPage() {
       });
 
       if (!res.ok) throw new Error(await res.text());
+      const { _id: orderId } = await res.json();
+      console.log('Pedido creado:', orderId);
 
       clearCart();
       alert('¡Pedido realizado con éxito!');
-      router.push('/client/home');
+      router.push(`/client/track?id=${orderId}`);
     } catch (err: any) {
       alert(`Error al confirmar pedido: ${err.message}`);
     }
