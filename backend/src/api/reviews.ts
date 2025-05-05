@@ -7,7 +7,8 @@ import {
   getReviewById,
   createReview,
   updateReview,
-  deleteReview
+  deleteReview,
+  getReviewsByRestaurant
 } from '../controllers/reviewController';
 import { validate } from '../lib/validators';
 
@@ -25,6 +26,17 @@ router.get(
       .withMessage('Invalid review ID')
   ]),
   getReviewById
+);
+
+//GET /api/reviews/restaurant/:id
+router.get(
+  '/restaurant/:restaurantId',
+  validate([
+    param('restaurantId')
+      .isMongoId()
+      .withMessage('Invalid restaurant ID')
+  ]),
+  getReviewsByRestaurant
 );
 
 // POST /api/reviews

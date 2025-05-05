@@ -16,7 +16,7 @@ export async function getReviewsByRestaurant(
   next: NextFunction
 ) {
   try {
-    const reviews = await reviewService.getReviewsByRestaurant(req.params.id);
+    const reviews = await reviewService.getReviewsByRestaurant(req.params.restaurantId);
     res.json(reviews);
   } catch (error) {
     next(error);
