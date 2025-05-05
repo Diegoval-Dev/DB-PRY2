@@ -1,0 +1,1300 @@
+[{
+  "_id": {
+    "$oid": "681036625365cda31cf4299f"
+  },
+  "name": "Teresa Kuvalis",
+  "email": "Lloyd.Bashirian36@gmail.com",
+  "password": "lT3LZU4P",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-07-30T06:41:12.755Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429a0"
+  },
+  "name": "Minnie Weimann",
+  "email": "Bernita32@gmail.com",
+  "password": "AFUuo0x1",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-10-02T04:41:46.893Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429a1"
+  },
+  "name": "Miss Terri Yundt II",
+  "email": "Cesar.Hahn@hotmail.com",
+  "password": "Tndr9ypR",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-07-28T00:27:20.507Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429a2"
+  },
+  "name": "Ralph Krajcik",
+  "email": "Kristopher_Kohler-Schroeder56@gmail.com",
+  "password": "zHfPcYtz",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2025-03-16T16:59:31.545Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429a3"
+  },
+  "name": "Mercedes Kautzer",
+  "email": "Brian.Murazik62@gmail.com",
+  "password": "zDnvobgt",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2025-03-12T14:00:37.102Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429a4"
+  },
+  "name": "Dr. Lillian Mraz-MacGyver",
+  "email": "Breana35@gmail.com",
+  "password": "CodY9xKY",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-09-23T07:30:24.013Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429a5"
+  },
+  "name": "Ms. Nora Hegmann",
+  "email": "Hudson_Stanton61@yahoo.com",
+  "password": "RDHwUCLc",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-12-03T22:58:08.057Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429a6"
+  },
+  "name": "Mr. Benny West",
+  "email": "Haskell_Runte-Hudson50@yahoo.com",
+  "password": "6Q_aUBRD",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2025-02-09T13:08:13.865Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429a7"
+  },
+  "name": "Laverne Herman",
+  "email": "Destini_Fritsch97@hotmail.com",
+  "password": "zUCkrHVe",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2025-04-03T09:34:34.890Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429a8"
+  },
+  "name": "Antonia Stehr",
+  "email": "Scotty.Toy73@yahoo.com",
+  "password": "sUyNGuqi",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-07-31T01:34:28.551Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429a9"
+  },
+  "name": "Kenneth Crist",
+  "email": "Jamaal73@gmail.com",
+  "password": "d7jjuTP1",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2025-04-09T22:17:37.699Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429aa"
+  },
+  "name": "Annie Simonis",
+  "email": "Camilla.Batz@yahoo.com",
+  "password": "6ADLYCEr",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2025-04-12T12:01:29.675Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429ab"
+  },
+  "name": "Barbara McClure",
+  "email": "Garth23@hotmail.com",
+  "password": "Nv7UrSpk",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-07-14T18:23:11.058Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429ac"
+  },
+  "name": "Nichole Oberbrunner",
+  "email": "Brody_Cormier56@gmail.com",
+  "password": "PqugEG_O",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-08-15T17:43:53.424Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429ad"
+  },
+  "name": "Melanie Moore",
+  "email": "Zakary.Kunze@gmail.com",
+  "password": "puwsjXPF",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2025-02-10T09:52:46.125Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429ae"
+  },
+  "name": "Vincent Ernser MD",
+  "email": "Kira.Nitzsche@yahoo.com",
+  "password": "0oubhrx5",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2025-04-11T13:18:06.486Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429af"
+  },
+  "name": "Larry Adams",
+  "email": "Lyric.Wunsch59@gmail.com",
+  "password": "Y5rdfqqM",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-07-23T17:05:52.648Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429b0"
+  },
+  "name": "Kyle Zulauf",
+  "email": "Harry98@yahoo.com",
+  "password": "imH2FDzx",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-08-27T05:47:15.749Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429b1"
+  },
+  "name": "Tara Reilly-Medhurst",
+  "email": "Destany81@hotmail.com",
+  "password": "O5NOsM_J",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-06-21T13:21:42.369Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429b2"
+  },
+  "name": "Meghan Schinner",
+  "email": "Verna_Lang50@gmail.com",
+  "password": "04OdrmIu",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2025-01-13T00:29:36.104Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429b3"
+  },
+  "name": "Roberto Rutherford I",
+  "email": "Jules_Jakubowski50@gmail.com",
+  "password": "3QbqAYcJ",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2025-01-30T21:16:12.489Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429b4"
+  },
+  "name": "Lois Rippin",
+  "email": "Marguerite.Purdy-Schowalter@hotmail.com",
+  "password": "MIR9gAcp",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-06-28T11:41:53.147Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429b5"
+  },
+  "name": "Patricia Kirlin",
+  "email": "Griffin.Hudson@yahoo.com",
+  "password": "N1X1RsDZ",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-05-10T22:58:20.498Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429b6"
+  },
+  "name": "Santiago Kilback",
+  "email": "Felipa_Orn@gmail.com",
+  "password": "AyygEw8q",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-07-09T05:38:18.194Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429b7"
+  },
+  "name": "Mr. Cecil Kuhic",
+  "email": "Rico.Gerlach@hotmail.com",
+  "password": "M17oKJTx",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2025-03-17T20:15:01.957Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429b8"
+  },
+  "name": "Gladys Franey-Borer",
+  "email": "Lucius.Nolan4@yahoo.com",
+  "password": "beXMcbJt",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-08-06T17:25:42.187Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429b9"
+  },
+  "name": "Mrs. Joan Frami",
+  "email": "Jacinto58@yahoo.com",
+  "password": "3s6Koygx",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-12-03T21:27:58.504Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429ba"
+  },
+  "name": "Genevieve Frami",
+  "email": "Janick.Mohr60@gmail.com",
+  "password": "pIzaFpZ2",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-06-28T12:32:37.107Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429bb"
+  },
+  "name": "Dr. Nina Berge",
+  "email": "Herta15@hotmail.com",
+  "password": "uVldFWqp",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-05-24T05:11:20.571Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429bc"
+  },
+  "name": "Mrs. Julie Shanahan-Nicolas",
+  "email": "Toni_Cole@hotmail.com",
+  "password": "mAWkXVgu",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-12-16T03:43:07.692Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429bd"
+  },
+  "name": "Cecelia Parker",
+  "email": "Dexter54@hotmail.com",
+  "password": "YGOYcFNm",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-10-03T18:56:12.684Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429be"
+  },
+  "name": "Mrs. Pauline Runolfsdottir",
+  "email": "Astrid_Towne-Friesen@yahoo.com",
+  "password": "iPVX4hQU",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-10-03T00:53:29.165Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429bf"
+  },
+  "name": "Julia Sauer Jr.",
+  "email": "Dannie.Ryan@hotmail.com",
+  "password": "bUfFfpt1",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-12-25T02:06:11.705Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429c0"
+  },
+  "name": "Horace Walker",
+  "email": "Carlotta.Bosco@hotmail.com",
+  "password": "xkKRGpTV",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-08-07T17:57:24.849Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429c1"
+  },
+  "name": "Laurence Brown MD",
+  "email": "Ronny58@hotmail.com",
+  "password": "poge82En",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-09-11T11:21:26.005Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429c2"
+  },
+  "name": "Beth Ruecker",
+  "email": "Sabina6@hotmail.com",
+  "password": "9N4oPl5a",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2025-03-18T11:15:02.284Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429c3"
+  },
+  "name": "Brittany Dach",
+  "email": "Savannah_Stiedemann86@hotmail.com",
+  "password": "VAjrLod5",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-11-15T12:37:17.253Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429c4"
+  },
+  "name": "Judy Waters",
+  "email": "Matilde83@hotmail.com",
+  "password": "Tv00INdW",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-08-20T06:09:45.452Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429c5"
+  },
+  "name": "Hector Boehm",
+  "email": "Dion_Grant@hotmail.com",
+  "password": "dEDTInGj",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-07-29T10:55:31.064Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429c6"
+  },
+  "name": "Isaac Gleichner",
+  "email": "Camila91@yahoo.com",
+  "password": "CrXKMt2A",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-12-16T04:00:06.856Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429c7"
+  },
+  "name": "Gregg Heathcote",
+  "email": "Seth76@yahoo.com",
+  "password": "ElBK0haz",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-12-06T16:53:24.836Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429c8"
+  },
+  "name": "Pauline Hodkiewicz-Miller",
+  "email": "Guy19@yahoo.com",
+  "password": "88isETca",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-12-15T02:38:53.066Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429c9"
+  },
+  "name": "Everett Ritchie",
+  "email": "Jailyn_Conn97@yahoo.com",
+  "password": "Fvh9mctU",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-06-29T12:37:01.134Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429ca"
+  },
+  "name": "Wallace Goyette-Heidenreich",
+  "email": "Rogelio.Mante0@yahoo.com",
+  "password": "b2Zw2VMi",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-06-01T15:02:46.428Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429cb"
+  },
+  "name": "Mr. Cory Bogan",
+  "email": "Hazel.Thompson13@hotmail.com",
+  "password": "AOTcT9As",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-05-21T07:00:37.162Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429cc"
+  },
+  "name": "Melba Trantow Jr.",
+  "email": "Flossie.Pfeffer@hotmail.com",
+  "password": "VEPKuDJd",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-12-03T04:43:08.537Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429cd"
+  },
+  "name": "Dr. Brent Towne",
+  "email": "Larue.Monahan@hotmail.com",
+  "password": "o6pm7yXu",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-12-04T08:02:32.251Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429ce"
+  },
+  "name": "Harry Gusikowski",
+  "email": "Tyler93@yahoo.com",
+  "password": "H50YRxwS",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2025-04-16T06:45:12.036Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429cf"
+  },
+  "name": "Josephine Gutkowski",
+  "email": "Emie63@yahoo.com",
+  "password": "2Vldlwy7",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-11-04T23:47:39.214Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429d0"
+  },
+  "name": "Rochelle Harris",
+  "email": "Jamie.Marquardt33@hotmail.com",
+  "password": "jJN_aOst",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-06-02T02:33:54.365Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429d1"
+  },
+  "name": "Leslie Green",
+  "email": "Daniella.Mayert27@yahoo.com",
+  "password": "RAtEpYQj",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2025-02-09T20:53:46.673Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429d2"
+  },
+  "name": "Inez Bradtke",
+  "email": "Yoshiko_Cruickshank71@gmail.com",
+  "password": "DuxnCyzd",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-07-01T21:25:25.943Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429d3"
+  },
+  "name": "Brandy Jakubowski",
+  "email": "Crystel.Carter@yahoo.com",
+  "password": "6eAKv56j",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-10-29T10:00:28.465Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429d4"
+  },
+  "name": "Anthony Bechtelar DVM",
+  "email": "Johnathan77@yahoo.com",
+  "password": "ZvR5vnuV",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-05-24T03:25:43.817Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429d5"
+  },
+  "name": "Krista Walter",
+  "email": "Cierra_Bode49@yahoo.com",
+  "password": "rTHB5HEO",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2025-04-26T07:31:06.301Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429d6"
+  },
+  "name": "Laurie Wehner",
+  "email": "Zack26@yahoo.com",
+  "password": "0Bnp2bhc",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-08-20T05:38:23.936Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429d7"
+  },
+  "name": "Ivan Robel",
+  "email": "Ryley97@yahoo.com",
+  "password": "l9xXh3zc",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2025-02-02T14:05:39.578Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429d8"
+  },
+  "name": "Ms. Judy Buckridge",
+  "email": "Lorna7@gmail.com",
+  "password": "cUTbzgWS",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2025-03-11T03:59:57.678Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429d9"
+  },
+  "name": "Lynn Hermann",
+  "email": "Imogene68@hotmail.com",
+  "password": "Tg9or1ym",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-11-07T08:33:47.643Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429da"
+  },
+  "name": "Johanna Kohler",
+  "email": "Vivian88@hotmail.com",
+  "password": "RWNUUwpD",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-07-02T08:26:44.551Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429db"
+  },
+  "name": "Jana Hauck V",
+  "email": "Delores70@yahoo.com",
+  "password": "3vnwweKS",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-12-10T14:32:49.498Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429dc"
+  },
+  "name": "Marcus Herzog",
+  "email": "Macey.Goyette29@gmail.com",
+  "password": "3E2RJltP",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2025-04-23T14:39:58.099Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429dd"
+  },
+  "name": "Cassandra Prohaska",
+  "email": "Rosetta43@hotmail.com",
+  "password": "f3w90nV1",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-12-23T13:28:38.460Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429de"
+  },
+  "name": "Karen Mertz",
+  "email": "Tiana.Bashirian@gmail.com",
+  "password": "KILu00YX",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2025-04-26T21:45:42.773Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429df"
+  },
+  "name": "Oscar Orn",
+  "email": "Scotty.Rempel39@gmail.com",
+  "password": "TEOSopgO",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-10-05T02:01:31.910Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429e0"
+  },
+  "name": "Christine Kunze",
+  "email": "Ari0@gmail.com",
+  "password": "OodwZdWU",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-06-17T22:52:34.890Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429e1"
+  },
+  "name": "Doreen Lemke",
+  "email": "Cindy.Trantow@gmail.com",
+  "password": "hW814_FT",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-11-24T14:22:48.603Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429e2"
+  },
+  "name": "Whitney Zboncak",
+  "email": "Tomas.Heidenreich95@gmail.com",
+  "password": "J59bKKGK",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2025-02-03T13:14:13.823Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429e3"
+  },
+  "name": "Darla Muller",
+  "email": "Gerald20@hotmail.com",
+  "password": "_2quWNmP",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-07-26T16:22:06.102Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429e4"
+  },
+  "name": "Mr. Gilberto Jenkins",
+  "email": "Lauretta_Oberbrunner@yahoo.com",
+  "password": "hrZTlWv4",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-11-20T21:28:36.557Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429e5"
+  },
+  "name": "Jaime Torp MD",
+  "email": "Lawson30@hotmail.com",
+  "password": "adxJm72O",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-11-12T19:45:07.425Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429e6"
+  },
+  "name": "Tami Becker",
+  "email": "Marcelle_Larkin78@hotmail.com",
+  "password": "m_2vQEIL",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-06-16T05:13:29.611Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429e7"
+  },
+  "name": "Clarence Torphy Sr.",
+  "email": "Amos39@hotmail.com",
+  "password": "D2NjKqe2",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-10-21T01:04:04.930Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429e8"
+  },
+  "name": "Andy Boehm",
+  "email": "Geoffrey20@gmail.com",
+  "password": "CpbLeJtb",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-08-02T16:07:27.351Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429e9"
+  },
+  "name": "Dr. Alejandro Stoltenberg",
+  "email": "Bernard_Reinger@gmail.com",
+  "password": "ehgqj8oX",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-06-28T17:44:47.566Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429ea"
+  },
+  "name": "Sammy Hilpert",
+  "email": "Guiseppe_Windler65@hotmail.com",
+  "password": "kYv4wRfR",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-12-10T10:02:03.534Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429eb"
+  },
+  "name": "Charlene Deckow IV",
+  "email": "Crystel55@gmail.com",
+  "password": "By3TE4iK",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-10-19T18:39:11.103Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429ec"
+  },
+  "name": "Christie Prohaska",
+  "email": "Logan.Powlowski@gmail.com",
+  "password": "oC3benyp",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-11-17T12:52:00.070Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429ed"
+  },
+  "name": "Geneva Douglas",
+  "email": "Millie.Howe71@yahoo.com",
+  "password": "X4Vlh5P9",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-09-30T22:24:24.275Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429ee"
+  },
+  "name": "Kelly Bradtke",
+  "email": "Reilly51@yahoo.com",
+  "password": "BsqzAJVA",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-10-11T05:20:47.223Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429ef"
+  },
+  "name": "Nichole Sporer",
+  "email": "Stanton32@gmail.com",
+  "password": "qxMHwTrQ",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-07-15T00:32:42.540Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429f0"
+  },
+  "name": "Evelyn Osinski",
+  "email": "Clare90@yahoo.com",
+  "password": "BwtodfQW",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-07-25T23:31:16.253Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429f1"
+  },
+  "name": "Leah Schneider",
+  "email": "Osborne3@yahoo.com",
+  "password": "mgITCk9x",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2025-04-06T05:10:33.672Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429f2"
+  },
+  "name": "Ebony Borer",
+  "email": "Ike.McClure@gmail.com",
+  "password": "4_5r0Fmz",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-07-15T04:38:53.080Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429f3"
+  },
+  "name": "Terrance Schoen",
+  "email": "Laurie30@hotmail.com",
+  "password": "o6_W94wq",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2025-03-24T17:42:49.844Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429f4"
+  },
+  "name": "Madeline Buckridge",
+  "email": "Josianne.Hermann@hotmail.com",
+  "password": "yMEXBfr0",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-09-16T01:20:34.803Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429f5"
+  },
+  "name": "Tracey Lynch",
+  "email": "Ellsworth41@yahoo.com",
+  "password": "wYFUxM3a",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-12-02T13:49:48.726Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429f6"
+  },
+  "name": "Orville Zieme",
+  "email": "Judge_Hagenes@yahoo.com",
+  "password": "BjrJx7pp",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-08-13T21:28:35.093Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429f7"
+  },
+  "name": "Nelson Kuvalis",
+  "email": "Leone.Schuster92@yahoo.com",
+  "password": "WkSP3Jf8",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2025-02-15T20:15:17.982Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429f8"
+  },
+  "name": "Alberto Adams",
+  "email": "Reid_Howe@gmail.com",
+  "password": "WzVjBr58",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-05-19T02:27:34.250Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429f9"
+  },
+  "name": "Mr. Corey Erdman",
+  "email": "Abbigail.Feil6@gmail.com",
+  "password": "5Xm7Pf8e",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-12-09T23:57:27.086Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429fa"
+  },
+  "name": "Robyn Kiehn",
+  "email": "Monserrate_OConner69@yahoo.com",
+  "password": "1ZMAEy9C",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-06-04T14:29:02.438Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429fb"
+  },
+  "name": "Dianna Wilkinson",
+  "email": "Zoie60@yahoo.com",
+  "password": "lG_ncRBk",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-12-27T15:47:28.085Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429fc"
+  },
+  "name": "Frank Turcotte",
+  "email": "Dandre56@yahoo.com",
+  "password": "jNXcf43L",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-09-30T14:27:07.202Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429fd"
+  },
+  "name": "Roosevelt Gorczany",
+  "email": "Pinkie_Nicolas@gmail.com",
+  "password": "fmHWHU9W",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-09-07T22:48:29.422Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429fe"
+  },
+  "name": "Regina King",
+  "email": "Lessie21@hotmail.com",
+  "password": "0bUw8QOI",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-10-24T12:37:37.555Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf429ff"
+  },
+  "name": "Luis Bartoletti",
+  "email": "Brando_McKenzie@gmail.com",
+  "password": "n4ZchDfr",
+  "role": "repartidor",
+  "registrationDate": {
+    "$date": "2024-09-04T06:49:57.127Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf42a00"
+  },
+  "name": "Cathy Boehm",
+  "email": "Rafaela_Runte8@gmail.com",
+  "password": "96kVGCl3",
+  "role": "cliente",
+  "registrationDate": {
+    "$date": "2024-08-25T00:06:13.129Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf42a01"
+  },
+  "name": "Hazel Barton",
+  "email": "Barton.Lueilwitz@hotmail.com",
+  "password": "DcjBDMCA",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2025-01-16T05:45:35.571Z"
+  },
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036625365cda31cf42a02"
+  },
+  "name": "Madeline Quitzon",
+  "email": "Bailee_Kihn57@gmail.com",
+  "password": "DQIKVuMO",
+  "role": "admin",
+  "registrationDate": {
+    "$date": "2024-08-03T07:47:01.678Z"
+  },
+  "__v": 0
+}]
