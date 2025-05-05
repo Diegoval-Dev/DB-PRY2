@@ -1,6 +1,7 @@
 import { Schema, model, Document, Types } from 'mongoose';
 
 export interface MenuItem extends Document {
+  _id: Types.ObjectId;
   restaurantId: Types.ObjectId;
   name: string;
   description: string;
@@ -10,6 +11,7 @@ export interface MenuItem extends Document {
 }
 
 const MenuItemSchema = new Schema<MenuItem>({
+  _id: { type: Schema.Types.ObjectId, auto: true },
   restaurantId: { type: Schema.Types.ObjectId, ref: 'Restaurant', required: true },
   name: { type: String, required: true },
   description: String,
