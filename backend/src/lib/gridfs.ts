@@ -1,17 +1,19 @@
-import mongoose from 'mongoose';
+/* backend/src/lib/gridfs.ts */
 import multer from 'multer';
-import { GridFsStorage } from 'multer-gridfs-storage';
+import mongoose from 'mongoose';
+import dotenv from 'dotenv';
+dotenv.config();
+// Carga el módulo y extrae la clase
+const storageModule = require('multer-gridfs-storage');
+const GridFsStorage =
+  storageModule.GridFsStorage ??
+  storageModule.default ??
+  storageModule;
 
-const mongoURI = process.env.MONGO_URI as string;
-
-interface FileMetadata {
-  bucketName: string;
-  filename: string;
-}
-
+// Configuración de GridFS
 export const storage = new GridFsStorage({
-  url: mongoURI,
-  file: (_req, file) => ({
+  url: process.env.MONGO_URI,
+  file: (_req: any, file: any) => ({
     bucketName: 'uploads',
     filename: `${Date.now()}-${file.originalname}`
   })
@@ -19,11 +21,7 @@ export const storage = new GridFsStorage({
 
 export const upload = multer({ storage });
 
-// Devuelve una instancia de GridFSBucket
 export function getBucket(): mongoose.mongo.GridFSBucket {
   const db = mongoose.connection.db;
-  if (!db) {
-    throw new Error('Database connection is not established.');
-  }
   return new mongoose.mongo.GridFSBucket(db, { bucketName: 'uploads' });
 }
