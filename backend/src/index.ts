@@ -14,6 +14,7 @@ import authRoutes from './api/auth';
 
 dotenv.config();
 
+export const BASE_URL = process.env.BASE_URL || 'http://localhost:3001';
 
 const app = express();
 app.use(cors());

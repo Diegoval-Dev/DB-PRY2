@@ -1,20 +1,31 @@
 import { Request, Response, NextFunction } from 'express';
 import * as menuItemService from '../services/menuItemService';
+import { BASE_URL } from '../lib/config';
+
+function withImageUrl(item: any) {
+  return {
+    ...item.toObject(),
+    imageUrl: item.imageId
+      ? `${BASE_URL}/api/files/${item.imageId}`
+      : null
+  };
+}
 
 export async function getAllMenuItems(req: Request, res: Response) {
   try {
     const items = await menuItemService.getAllMenuItems();
-    res.json(items);
+    res.json(items.map(withImageUrl));
   } catch (error) {
     res.status(500).json({ message: 'Error retrieving menu items', error });
   }
 }
 
+
 export async function getMenuItemById(req: Request, res: Response) {
   try {
     const item = await menuItemService.getMenuItemById(req.params.id);
     if (!item) return res.status(404).json({ message: 'MenuItem not found' });
-    res.json(item);
+    res.json(withImageUrl(item));
   } catch (error) {
     res.status(500).json({ message: 'Error retrieving menu item', error });
   }

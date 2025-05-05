@@ -9,7 +9,7 @@
     "seed": "ts-node-dev --respawn --transpile-only scripts/seed.ts",
     "build": "tsc",
     "start": "node dist/index.js",
-    "import:data": "mongoimport --uri=\"$MONGO_URI\" --drop --jsonArray --file=data/gercoraunte.users.json --collection=users && mongoimport --uri=\"$MONGO_URI\" --drop --jsonArray --file=data/gercoraunte.restaurants.json --collection=restaurants && mongoimport --uri=\"$MONGO_URI\" --drop --jsonArray --file=data/gercoraunte.menuitems.json --collection=menuitems && mongoimport --uri=\"$MONGO_URI\" --drop --jsonArray --file=data/gercoraunte.orders.json --collection=orders && mongoimport --uri=\"$MONGO_URI\" --drop --jsonArray --file=data/gercoraunte.reviews.json --collection=reviews"
+    "import:data": "ts-node-dev --respawn --transpile-only scripts/import-data.ts"
   },
   "keywords": [],
   "author": "",

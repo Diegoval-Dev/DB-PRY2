@@ -1,10 +1,19 @@
 import { Request, Response, NextFunction } from 'express';
 import * as restaurantService from '../services/restaurantService';
+import { BASE_URL } from '../lib/config';
+
+function withImageUrls(rest: any) {
+  return {
+    ...rest.toObject(),
+    imageUrls: rest.imageIds.map((id: string) => `${BASE_URL}/api/files/${id}`)
+  };
+}
 
 export async function getAllRestaurants(req: Request, res: Response) {
   try {
     const restaurants = await restaurantService.getAllRestaurants();
-    res.json(restaurants);
+    const dto = restaurants.map(withImageUrls);
+    res.json(dto);
   } catch (error) {
     res.status(500).json({ message: 'Error retrieving restaurants', error });
   }
@@ -12,11 +21,9 @@ export async function getAllRestaurants(req: Request, res: Response) {
 
 export async function getRestaurantById(req: Request, res: Response) {
   try {
-    const restaurant = await restaurantService.getRestaurantById(req.params.id);
-    if (!restaurant) {
-      return res.status(404).json({ message: 'Restaurant not found' });
-    }
-    res.json(restaurant);
+    const rest = await restaurantService.getRestaurantById(req.params.id);
+    if (!rest) return res.status(404).json({ message: 'Restaurant not found' });
+    res.json(withImageUrls(rest));
   } catch (error) {
     res.status(500).json({ message: 'Error retrieving restaurant', error });
   }
