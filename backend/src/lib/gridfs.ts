@@ -25,3 +25,4 @@ export function getBucket(): mongoose.mongo.GridFSBucket {
   const db = mongoose.connection.db;
   return new mongoose.mongo.GridFSBucket(db, { bucketName: 'uploads' });
 }
+//vacaca
