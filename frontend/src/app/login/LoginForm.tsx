@@ -16,7 +16,7 @@ export default function LoginForm() {
     setError('');
 
     try {
-      const res = await fetch('/api/auth/login', {
+      const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/login`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
@@ -26,7 +26,7 @@ export default function LoginForm() {
       if (!res.ok) throw new Error(data.error || 'Error desconocido');
 
       login(data.token, data.user);
-      router.push('/cliente/home');
+      router.push('/client/home');
     } catch (err: any) {
       setError(err.message);
     }

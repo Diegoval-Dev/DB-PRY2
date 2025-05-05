@@ -15,17 +15,17 @@ export default function RegisterForm() {
     setError('');
 
     try {
-      const res = await fetch('/api/auth/register', {
+       const res = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ ...form, role: 'cliente' }),
       });
 
       const data = await res.json();
-      if (!res.ok) throw new Error(data.error || 'Error al registrarse');
+      if (!res.ok) throw new Error('Error al registrarse');
 
       login(data.token, data.user);
-      router.push('/cliente/home');
+      router.push('/client/home');
     } catch (err: any) {
       setError(err.message);
     }
