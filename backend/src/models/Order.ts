@@ -6,6 +6,7 @@ interface OrderItem {
 }
 
 export interface Order extends Document {
+  _id: Types.ObjectId;
   userId: Types.ObjectId;
   restaurantId: Types.ObjectId;
   date: Date;
@@ -15,6 +16,7 @@ export interface Order extends Document {
 }
 
 const OrderSchema = new Schema<Order>({
+  _id: { type: Schema.Types.ObjectId, auto: true },
   userId: { type: Schema.Types.ObjectId, ref: 'User', required: true },
   restaurantId: { type: Schema.Types.ObjectId, ref: 'Restaurant', required: true },
   date: { type: Date, default: Date.now },

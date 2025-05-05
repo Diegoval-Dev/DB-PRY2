@@ -4,6 +4,7 @@ import { Router } from 'express';
 import { param, body } from 'express-validator';
 import {
   getAllOrders,
+  getOrdersByUser,
   getOrderById,
   createOrder,
   updateOrder,
@@ -26,6 +27,17 @@ router.get(
       .withMessage('Invalid order ID')
   ]),
   getOrderById
+);
+
+// GET /api/orders/user/:id
+router.get(
+  '/user/:id',
+  validate([
+    param('id')
+      .isMongoId()
+      .withMessage('Invalid user ID')
+  ]),
+  getOrdersByUser
 );
 
 // POST /api/orders
