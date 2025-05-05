@@ -24,7 +24,7 @@ export default function MenuItemCard({ item, restaurantId }: Props) {
       <div className="flex items-center justify-between mt-4">
         <span className="text-[#FF6F61] font-medium">Q{item.price.toFixed(2)}</span>
         <button
-          className="text-sm bg-[#4CAF50] text-white px-3 py-1 rounded hover:bg-green-600"
+          className="text-sm bg-[#de6054] text-white px-3 py-1 rounded hover:bg-green-600"
           onClick={() =>
             addItem({
               menuItemId: item._id,

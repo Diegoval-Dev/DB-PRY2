@@ -126,7 +126,7 @@ export default function ClientHomePage() {
                     <div className="mt-4 flex justify-between items-center">
                       <span className="text-sm text-gray-500">⭐ {restaurant.rating || '4.5'}</span>
                       <button 
-                        onClick={() => router.push(`/client/restaurant?id=${restaurant._id}`)}
+                        onClick={() => router.push(`/client/restaurant/${restaurant._id}`)}
                         className="px-4 py-2 bg-[#FF6F61] hover:bg-[#e86559] text-white rounded-md transition-colors"
                       >
                         Ver menú
