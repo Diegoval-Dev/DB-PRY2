@@ -1,0 +1,397 @@
+[{
+  "_id": {
+    "$oid": "681036635365cda31cf42a04"
+  },
+  "name": "Bruen, Huel and Kunze",
+  "address": "676 Muller Gardens",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -31.1242,
+      -80.0122
+    ]
+  },
+  "specialties": [
+    "asiática"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a05"
+  },
+  "name": "Robel - Hilpert",
+  "address": "99472 North Avenue",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -152.6648,
+      -27.3268
+    ]
+  },
+  "specialties": [
+    "vegana",
+    "mexicana"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a06"
+  },
+  "name": "Wolff - Grady",
+  "address": "81243 Lura Corner",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -3.6163,
+      63.9717
+    ]
+  },
+  "specialties": [
+    "italiana"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a07"
+  },
+  "name": "Goldner, Rowe and Beahan",
+  "address": "458 Weber Squares",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      95.9461,
+      52.3626
+    ]
+  },
+  "specialties": [
+    "mexicana"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a08"
+  },
+  "name": "Rosenbaum - Dickens",
+  "address": "236 Cameron Via",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      18.2771,
+      -62.5169
+    ]
+  },
+  "specialties": [
+    "asiática",
+    "americana",
+    "italiana"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a09"
+  },
+  "name": "Legros Inc",
+  "address": "95877 Garfield Rest",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      30.4291,
+      21.0176
+    ]
+  },
+  "specialties": [
+    "asiática"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a0a"
+  },
+  "name": "Funk - Bruen",
+  "address": "43161 Zechariah Ramp",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -130.4387,
+      20.9647
+    ]
+  },
+  "specialties": [
+    "mexicana"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a0b"
+  },
+  "name": "Dicki, Weber and Hand",
+  "address": "6697 Railroad Avenue",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -176.8895,
+      24.1384
+    ]
+  },
+  "specialties": [
+    "asiática"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a0c"
+  },
+  "name": "Hilpert Inc",
+  "address": "493 Western Avenue",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -136.8732,
+      -74.9581
+    ]
+  },
+  "specialties": [
+    "americana",
+    "asiática"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a0d"
+  },
+  "name": "Cummings, Kautzer and McLaughlin",
+  "address": "69798 Birch Road",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      24.1394,
+      22.2079
+    ]
+  },
+  "specialties": [
+    "asiática",
+    "mexicana"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a0e"
+  },
+  "name": "Robel - Oberbrunner",
+  "address": "51822 Mertz Mills",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -8.4002,
+      53.1906
+    ]
+  },
+  "specialties": [
+    "italiana"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a0f"
+  },
+  "name": "Luettgen Inc",
+  "address": "10501 Mante Estate",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      103.0553,
+      9.8399
+    ]
+  },
+  "specialties": [
+    "asiática",
+    "vegana",
+    "americana"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a10"
+  },
+  "name": "Oberbrunner and Sons",
+  "address": "323 Damien Neck",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      165.8184,
+      43.3996
+    ]
+  },
+  "specialties": [
+    "americana",
+    "asiática"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a11"
+  },
+  "name": "Wunsch - Ernser",
+  "address": "5727 Schinner River",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      45.5579,
+      -34.348
+    ]
+  },
+  "specialties": [
+    "italiana",
+    "mexicana"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a12"
+  },
+  "name": "Purdy LLC",
+  "address": "58043 Victoria Street",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -132.6759,
+      -56.6202
+    ]
+  },
+  "specialties": [
+    "mexicana",
+    "asiática",
+    "italiana"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a13"
+  },
+  "name": "Schimmel, Mosciski and Erdman",
+  "address": "1143 Jakubowski Courts",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -113.9599,
+      1.2541
+    ]
+  },
+  "specialties": [
+    "americana",
+    "italiana",
+    "asiática"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a14"
+  },
+  "name": "Kautzer, Muller and Kuhic",
+  "address": "480 Earl Path",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -175.291,
+      -47.0867
+    ]
+  },
+  "specialties": [
+    "italiana",
+    "vegana"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a15"
+  },
+  "name": "Murazik - Borer",
+  "address": "9470 Tyreek Keys",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      -138.834,
+      -88.3594
+    ]
+  },
+  "specialties": [
+    "asiática",
+    "italiana"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a16"
+  },
+  "name": "Reichel, Leannon and Gerhold",
+  "address": "3894 Lang Fork",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      8.8946,
+      -40.5146
+    ]
+  },
+  "specialties": [
+    "asiática"
+  ],
+  "imageIds": [],
+  "__v": 0
+},
+{
+  "_id": {
+    "$oid": "681036635365cda31cf42a17"
+  },
+  "name": "Gerlach, Kutch and Feil",
+  "address": "76880 Laurel Mall",
+  "location": {
+    "type": "Point",
+    "coordinates": [
+      99.0367,
+      -36.5159
+    ]
+  },
+  "specialties": [
+    "vegana",
+    "italiana",
+    "asiática"
+  ],
+  "imageIds": [],
+  "__v": 0
+}]
