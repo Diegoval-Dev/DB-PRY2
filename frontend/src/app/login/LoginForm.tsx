@@ -2,12 +2,14 @@
 
 import { useState } from 'react';
 import { useRouter } from 'next/navigation';
+import { useAuth } from '@/store/useAuth';
 
 export default function LoginForm() {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const router = useRouter();
+  const { login } = useAuth();
 
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
@@ -23,7 +25,7 @@ export default function LoginForm() {
       const data = await res.json();
       if (!res.ok) throw new Error(data.error || 'Error desconocido');
 
-      localStorage.setItem('token', data.token);
+      login(data.token, data.user);
       router.push('/cliente/home');
     } catch (err: any) {
       setError(err.message);
