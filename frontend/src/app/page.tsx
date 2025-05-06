@@ -76,7 +76,7 @@ export default function Home() {
               <div className="relative w-full h-[500px]">
                 <div className="absolute top-0 right-0 w-[300px] h-[300px] bg-white rounded-2xl shadow-xl overflow-hidden -rotate-6 z-10">
                   <Image 
-                    src="/dish1.jpg" 
+                    src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?q=80&w=1381&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                     alt="Comida deliciosa" 
                     fill 
                     className="object-cover" 
@@ -84,7 +84,7 @@ export default function Home() {
                 </div>
                 <div className="absolute bottom-0 left-0 w-[300px] h-[300px] bg-white rounded-2xl shadow-xl overflow-hidden rotate-6 z-20">
                   <Image 
-                    src="/dish2.jpg" 
+                    src="https://images.unsplash.com/photo-1466978913421-dad2ebd01d17?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                     alt="Comida deliciosa" 
                     fill 
                     className="object-cover" 
@@ -196,7 +196,7 @@ export default function Home() {
               </div>
               <div className="flex justify-center lg:justify-end">
                 <Image 
-                  src="/app-mockup.png" 
+                  src="https://images.unsplash.com/photo-1563379926898-05f4575a45d8?q=80&w=1170&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" 
                   alt="GercoRaunte App" 
                   width={300}
                   height={600}

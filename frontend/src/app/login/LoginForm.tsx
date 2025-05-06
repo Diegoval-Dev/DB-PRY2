@@ -33,7 +33,7 @@ export default function LoginForm() {
       } else if (user.role === 'repartidor') {
         router.push('/repartidor/home');
       } else if (user.role === 'admin') {
-        router.push('/admin/dashboard');
+        router.push('/admin/home');
       }
     } catch (err: any) {
       setError(err.message);
