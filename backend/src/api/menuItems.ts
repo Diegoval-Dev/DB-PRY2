@@ -7,7 +7,10 @@ import {
   getMenuItemById,
   createMenuItem,
   updateMenuItem,
-  deleteMenuItem
+  deleteMenuItem,
+  createMenuItemsBulk,
+  updateMenuItemsBulk, 
+  deleteMenuItemsBulk
 } from '../controllers/menuItemController';
 import { validate } from '../lib/validators';
 
@@ -51,6 +54,18 @@ router.post(
   ]),
   createMenuItem
 );
+
+// POST /api/menu-items/bulk
+router.post('/bulk', createMenuItemsBulk);
+
+// **Bulk update**
+// PUT /api/menu-items/bulk
+router.put('/bulk', updateMenuItemsBulk);
+
+// **Bulk delete**
+// DELETE /api/menu-items/bulk
+router.delete('/bulk', deleteMenuItemsBulk);
+
 
 // PUT /api/menu-items/:id
 router.put(

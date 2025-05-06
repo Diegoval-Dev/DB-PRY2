@@ -68,3 +68,33 @@ export async function deleteMenuItem(req: Request, res: Response) {
     res.status(500).json({ message: 'Error deleting menu item', error });
   }
 }
+
+export async function createMenuItemsBulk(req: Request, res: Response) {
+  try {
+    const items = await menuItemService.createMenuItemsBulk(req.body);
+    res.status(201).json(items);
+  } catch (err) {
+    res.status(500).json({ message: 'Error creando menú bulk', err });
+  }
+}
+
+export async function updateMenuItemsBulk(req: Request, res: Response) {
+  try {
+    // req.body = { filter: {...}, update: {...} }
+    const result = await menuItemService.updateMenuItemsBulk(req.body.filter, req.body.update);
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ message: 'Error actualizando menú bulk', err });
+  }
+}
+
+export async function deleteMenuItemsBulk(req: Request, res: Response) {
+  try {
+    // req.body = { ids: [id1,id2,...] }
+    const result = await menuItemService.deleteMenuItemsBulk(req.body.ids);
+    res.json(result);
+  } catch (err) {
+    res.status(500).json({ message: 'Error eliminando menú bulk', err });
+  }
+}
+
