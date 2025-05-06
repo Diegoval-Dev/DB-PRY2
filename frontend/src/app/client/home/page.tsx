@@ -110,9 +110,9 @@ export default function ClientHomePage() {
               {restaurants.slice(0, 2).map((restaurant) => (
                 <div key={restaurant._id} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <div className="h-40 bg-gray-200 relative">
-                    {restaurant.image && (
+                    {restaurant.imageUrls && (
                       <img 
-                        src={restaurant.image} 
+                        src={restaurant.imageUrls[0]} 
                         alt={restaurant.name} 
                         className="w-full h-full object-cover"
                       />

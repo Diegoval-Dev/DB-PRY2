@@ -8,7 +8,7 @@ interface Review {
   userName: string;
   rating: number;
   comment: string;
-  createdAt: string;
+  date: string;
 }
 
 export default function RestaurantReviews({ restaurantId }: { restaurantId: string }) {
@@ -32,8 +32,6 @@ useEffect(() => {
 
 }, [restaurantId, token]);
 
-  console.log('Reviews:', reviews);
-
   if (loading) return <p className="mt-6 text-sm">Cargando reseñas...</p>;
   if (error) return <p className="text-red-500 text-sm">{error}</p>;
   if (reviews.length === 0) return <p className="mt-6 text-sm text-gray-500">Aún no hay reseñas.</p>;
@@ -47,7 +45,7 @@ useEffect(() => {
             <p className="text-sm text-[#333] font-medium">{r.userName}</p>
             <p className="text-sm text-yellow-500">{"★".repeat(r.rating)}{"☆".repeat(5 - r.rating)}</p>
             <p className="text-sm text-gray-600">{r.comment}</p>
-            <p className="text-xs text-gray-400 mt-1">{new Date(r.createdAt).toLocaleDateString()}</p>
+            <p className="text-xs text-gray-400 mt-1">{new Date(r.date).toLocaleString()}</p>
           </div>
         ))}
       </div>

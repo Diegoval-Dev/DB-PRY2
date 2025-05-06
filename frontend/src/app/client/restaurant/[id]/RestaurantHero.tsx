@@ -5,9 +5,9 @@ import { FiStar, FiClock } from 'react-icons/fi';
 export default function RestaurantHero({ restaurant }: { restaurant: any }) {
   return (
     <div className="relative h-64 bg-gray-200 overflow-hidden">
-      {restaurant.image ? (
+      {restaurant.imageUrls[0] ? (
         <Image 
-          src={restaurant.image} 
+          src={restaurant.imageUrls[0]} 
           alt={restaurant.name}
           fill
           className="object-cover"
