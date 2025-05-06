@@ -3,7 +3,7 @@
 import { Router } from 'express';
 import { query, param, body } from 'express-validator';
 import {
-  getAllRestaurants,
+  listRestaurants,
   getRestaurantById,
   createRestaurant,
   updateRestaurant,
@@ -19,7 +19,7 @@ import { validate } from '../lib/validators';
 const router = Router();
 
 // GET /api/restaurants
-router.get('/', getAllRestaurants);
+router.get('/', listRestaurants);
 
 // GET /api/restaurants/nearby?lng=&lat=&maxDistance=
 router.get(

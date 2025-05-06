@@ -11,12 +11,37 @@ function withImageUrl(item: any) {
   };
 }
 
-export async function getAllMenuItems(req: Request, res: Response) {
+export async function listMenuItems(req: Request, res: Response) {
   try {
-    const items = await menuItemService.getAllMenuItems();
-    res.json(items.map(withImageUrl));
+    const page = parseInt(req.query.page as string) || 1;
+    const limit = parseInt(req.query.limit as string) || 10;
+    const sortField = (req.query.sortBy as string) || 'name';
+    const sortDir = req.query.sortDir === 'desc' ? -1 : 1;
+    const fields = (req.query.fields as string)?.split(',') || undefined;
+    const restaurantId = req.query.restaurantId as string | undefined;
+
+    const filter: any = {};
+    if (restaurantId) filter.restaurantId = restaurantId;
+
+    const { data, total } = await menuItemService.getMenuItems({
+      filter,
+      projection: fields,
+      sort: { [sortField]: sortDir },
+      page,
+      limit
+    });
+
+    const payload = data.map(withImageUrl);
+
+    res.json({
+      page,
+      limit,
+      total,
+      pages: Math.ceil(total / limit),
+      data: payload
+    });
   } catch (error) {
-    res.status(500).json({ message: 'Error retrieving menu items', error });
+    res.status(500).json({ message: 'Error listando menu items', error });
   }
 }
 

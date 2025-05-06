@@ -1,10 +1,51 @@
 import MenuItemModel, { MenuItem } from '../models/MenuItem';
 import { HydratedDocument, Types } from 'mongoose';
+import { FilterQuery } from 'mongoose';
+
+
+export interface MenuItemQueryOptions {
+  filter?: FilterQuery<MenuItem>;
+  projection?: string[];
+  sort?: Record<string, 1 | -1>;
+  page?: number;
+  limit?: number;
+}
+
 
 export type MenuItemDoc = HydratedDocument<MenuItem>;
 
-export async function getAllMenuItems(): Promise<MenuItem[]> {
-  return await MenuItemModel.find();
+export async function getMenuItems(
+  opts: MenuItemQueryOptions
+): Promise<{ data: MenuItem[]; total: number }> {
+  const {
+    filter = {} as FilterQuery<MenuItem>,
+    projection,
+    sort = { name: 1 },
+    page = 1,
+    limit = 10
+  } = opts;
+
+  // 1) Construir la consulta con lean<MenuItem>()
+  let cursor = MenuItemModel.find(filter).lean<MenuItem>();
+
+  // 2) Proyección
+  if (projection) {
+    const projObj = projection.reduce<Record<string, 1>>(
+      (acc, f) => ({ ...acc, [f]: 1 }),
+      {}
+    );
+    cursor = cursor.select(projObj);
+  }
+
+  // 3) Contar total
+  const total = await MenuItemModel.countDocuments(filter);
+
+  // 4) Ordenar, skip & limit
+  cursor = cursor.sort(sort).skip((page - 1) * limit).limit(limit);
+
+  // 5) Ejecutar y devolver como plain objects
+  const data = await cursor.exec();
+  return { data, total };
 }
 
 export async function getMenuItemById(id: string): Promise<MenuItem | null> {

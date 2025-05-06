@@ -9,13 +9,39 @@ function withImageUrls(rest: any) {
   };
 }
 
-export async function getAllRestaurants(req: Request, res: Response) {
+export async function listRestaurants(req: Request, res: Response) {
   try {
-    const restaurants = await restaurantService.getAllRestaurants();
-    const dto = restaurants.map(withImageUrls);
-    res.json(dto);
+    // Parsear parámetros de query
+    const page = parseInt(req.query.page as string) || 1;
+    const limit = parseInt(req.query.limit as string) || 10;
+    const sortField = (req.query.sortBy as string) || 'name';
+    const sortDir = req.query.sortDir === 'desc' ? -1 : 1;
+    const fields = (req.query.fields as string)?.split(',') || undefined;
+    const specialty = req.query.specialty as string | undefined;
+
+    const filter: any = {};
+    if (specialty) filter.specialties = specialty;
+
+    const { data, total } = await restaurantService.getRestaurants({
+      filter,
+      projection: fields,
+      sort: { [sortField]: sortDir },
+      page,
+      limit
+    });
+
+    // Mapear URLs de imagen
+    const payload = data.map(withImageUrls);
+
+    res.json({
+      page,
+      limit,
+      total,
+      pages: Math.ceil(total / limit),
+      data: payload
+    });
   } catch (error) {
-    res.status(500).json({ message: 'Error retrieving restaurants', error });
+    res.status(500).json({ message: 'Error listando restaurantes', error });
   }
 }
 

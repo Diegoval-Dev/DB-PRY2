@@ -3,7 +3,7 @@
 import { Router } from 'express';
 import { param, body } from 'express-validator';
 import {
-  getAllMenuItems,
+  listMenuItems,
   getMenuItemById,
   createMenuItem,
   updateMenuItem,
@@ -17,7 +17,7 @@ import { validate } from '../lib/validators';
 const router = Router();
 
 // GET /api/menu-items
-router.get('/', getAllMenuItems);
+router.get('/', listMenuItems);
 
 // GET /api/menu-items/:id
 router.get(
