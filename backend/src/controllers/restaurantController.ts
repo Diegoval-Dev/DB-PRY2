@@ -3,9 +3,11 @@ import * as restaurantService from '../services/restaurantService';
 import { BASE_URL } from '../lib/config';
 
 function withImageUrls(rest: any) {
+  const restObj = rest.toObject ? rest.toObject() : rest;
+  
   return {
-    ...rest.toObject(),
-    imageUrls: rest.imageIds.map((id: string) => `${BASE_URL}/api/files/${id}`)
+    ...restObj,
+    imageUrls: restObj.imageIds?.map((id: string) => `${BASE_URL}/api/files/${id}`) || []
   };
 }
 
@@ -17,10 +19,9 @@ export async function listRestaurants(req: Request, res: Response) {
     const sortField = (req.query.sortBy as string) || 'name';
     const sortDir = req.query.sortDir === 'desc' ? -1 : 1;
     const fields = (req.query.fields as string)?.split(',') || undefined;
-    const specialty = req.query.specialty as string | undefined;
-
+    
+    // Eliminado el filtro por especialidad
     const filter: any = {};
-    if (specialty) filter.specialties = specialty;
 
     const { data, total } = await restaurantService.getRestaurants({
       filter,
@@ -30,7 +31,6 @@ export async function listRestaurants(req: Request, res: Response) {
       limit
     });
 
-    // Mapear URLs de imagen
     const payload = data.map(withImageUrls);
 
     res.json({

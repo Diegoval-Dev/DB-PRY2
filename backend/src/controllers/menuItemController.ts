@@ -3,10 +3,12 @@ import * as menuItemService from '../services/menuItemService';
 import { BASE_URL } from '../lib/config';
 
 function withImageUrl(item: any) {
+  const itemObj = item.toObject ? item.toObject() : item;
+  
   return {
-    ...item.toObject(),
-    imageUrl: item.imageId
-      ? `${BASE_URL}/api/files/${item.imageId}`
+    ...itemObj,
+    imageUrl: itemObj.imageId
+      ? `${BASE_URL}/api/files/${itemObj.imageId}`
       : null
   };
 }
@@ -18,9 +20,10 @@ export async function listMenuItems(req: Request, res: Response) {
     const sortField = (req.query.sortBy as string) || 'name';
     const sortDir = req.query.sortDir === 'desc' ? -1 : 1;
     const fields = (req.query.fields as string)?.split(',') || undefined;
-    const restaurantId = req.query.restaurantId as string | undefined;
-
+    
+    // Mantener solo el filtro por restaurantId si está presente
     const filter: any = {};
+    const restaurantId = req.query.restaurantId as string | undefined;
     if (restaurantId) filter.restaurantId = restaurantId;
 
     const { data, total } = await menuItemService.getMenuItems({
@@ -58,10 +61,32 @@ export async function getMenuItemById(req: Request, res: Response) {
 
 export async function getMenuByRestaurant(req: Request, res: Response, next: NextFunction) {
   try {
-    const items = await menuItemService.getMenuItemsByRestaurant(req.params.id);
-    res.json(items);
-  } catch (err) {
-    next(err);
+    const page = parseInt(req.query.page as string) || 1;
+    const limit = parseInt(req.query.limit as string) || 10;
+    const sortField = (req.query.sortBy as string) || 'name';
+    const sortDir = req.query.sortDir === 'desc' ? -1 : 1;
+    
+    const restaurantId = req.params.id;
+    
+    // Usar el método getMenuItems con filtro por restaurantId
+    const { data, total } = await menuItemService.getMenuItems({
+      filter: { restaurantId },
+      sort: { [sortField]: sortDir },
+      page,
+      limit
+    });
+
+    const payload = data.map(withImageUrl);
+
+    res.json({
+      page,
+      limit,
+      total,
+      pages: Math.ceil(total / limit),
+      data: payload
+    });
+  } catch (error) {
+    next(error);
   }
 }
 
