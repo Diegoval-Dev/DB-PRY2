@@ -3,16 +3,30 @@
 import { useEffect, useState } from 'react';
 import { useAuth } from '@/store/useAuth';
 import { useRouter } from 'next/navigation';
-import { useRestaurants } from './useRestaurants';
+import { useRestaurants } from './useRestaurants'; // Este hook se modificará también
 import RestaurantCard from './RestaurantCard';
-import { FiClock, FiSearch, FiMessageCircle, FiStar } from 'react-icons/fi';
+import { FiClock, FiSearch, FiStar, FiChevronLeft, FiChevronRight } from 'react-icons/fi';
 import { motion } from 'framer-motion';
 
 export default function ClientHomePage() {
   const { user, token } = useAuth();
   const router = useRouter();
-  const { restaurants, loading, error } = useRestaurants(token);
+  
+  // Estado de paginación
+  const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
+  const [pageSize, setPageSize] = useState(6); // Tamaño de página predeterminado
+  
+  // Pasamos los parámetros de paginación al hook
+  const { restaurants, loading, error, pagination } = useRestaurants(token, currentPage, pageSize);
   const [searchTerm, setSearchTerm] = useState('');
+
+  // Actualizar el total de páginas cuando cambie la respuesta de paginación
+  useEffect(() => {
+    if (pagination) {
+      setTotalPages(pagination.pages);
+    }
+  }, [pagination]);
 
   // Filtrar restaurantes basados en la búsqueda
   const filteredRestaurants = restaurants.filter(restaurant =>
@@ -25,6 +39,27 @@ export default function ClientHomePage() {
     }
   }, [user, router]);
 
+  // Cambiar a la página anterior
+  const goToPreviousPage = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  // Cambiar a la página siguiente
+  const goToNextPage = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
+  // Ir a una página específica
+  const goToPage = (page: number) => {
+    if (page >= 1 && page <= totalPages) {
+      setCurrentPage(page);
+    }
+  };
+
   // Función para obtener el saludo según la hora del día
   const getGreeting = () => {
     const hour = new Date().getHours();
@@ -35,7 +70,7 @@ export default function ClientHomePage() {
 
   // Renderizar skeletons durante la carga
   const renderSkeletons = () => {
-    return Array(6).fill(0).map((_, index) => (
+    return Array(pageSize).fill(0).map((_, index) => (
       <div key={index} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-lg transition-shadow duration-300">
         <div className="h-40 bg-gray-200 animate-pulse"></div>
         <div className="p-4">
@@ -48,6 +83,57 @@ export default function ClientHomePage() {
       </div>
     ));
   };
+
+  // Componente para los controles de paginación
+  const PaginationControls = () => (
+    <div className="flex justify-center items-center mt-8 space-x-2">
+      <button 
+        onClick={goToPreviousPage} 
+        disabled={currentPage === 1}
+        className={`p-2 rounded-md ${currentPage === 1 ? 'text-gray-400 cursor-not-allowed' : 'text-gray-700 hover:bg-gray-100'}`}
+      >
+        <FiChevronLeft size={20} />
+      </button>
+      
+      {/* Mostrar números de página */}
+      {Array.from({ length: totalPages }, (_, i) => i + 1)
+        .filter(page => {
+          // Mostrar primera página, última página, página actual y páginas adyacentes
+          return page === 1 || page === totalPages || 
+                 Math.abs(page - currentPage) <= 1;
+        })
+        .map((page, index, array) => {
+          // Si hay un salto entre páginas, mostrar puntos suspensivos
+          if (index > 0 && page - array[index - 1] > 1) {
+            return (
+              <span key={`ellipsis-${page}`} className="px-2 py-1 text-gray-500">...</span>
+            );
+          }
+          
+          return (
+            <button
+              key={page}
+              onClick={() => goToPage(page)}
+              className={`w-8 h-8 rounded-full ${page === currentPage 
+                ? 'bg-[#FF6F61] text-white' 
+                : 'text-gray-700 hover:bg-gray-100'}`}
+            >
+              {page}
+            </button>
+          );
+        })}
+        
+      <button 
+        onClick={goToNextPage} 
+        disabled={currentPage === totalPages || totalPages === 0}
+        className={`p-2 rounded-md ${currentPage === totalPages || totalPages === 0 
+          ? 'text-gray-400 cursor-not-allowed' 
+          : 'text-gray-700 hover:bg-gray-100'}`}
+      >
+        <FiChevronRight size={20} />
+      </button>
+    </div>
+  );
 
   return (
     <div className="min-h-screen bg-gray-50">
@@ -110,7 +196,7 @@ export default function ClientHomePage() {
               {restaurants.slice(0, 2).map((restaurant) => (
                 <div key={restaurant._id} className="bg-white rounded-xl overflow-hidden shadow-md hover:shadow-xl transition-all duration-300 transform hover:-translate-y-1">
                   <div className="h-40 bg-gray-200 relative">
-                    {restaurant.imageUrls && (
+                    {restaurant.imageUrls && restaurant.imageUrls[0] && (
                       <img 
                         src={restaurant.imageUrls[0]} 
                         alt={restaurant.name} 
@@ -184,6 +270,18 @@ export default function ClientHomePage() {
               </motion.div>
             ))}
           </div>
+          
+          {/* Paginación */}
+          {!loading && filteredRestaurants.length > 0 && (
+            <PaginationControls />
+          )}
+          
+          {/* Información sobre la paginación */}
+          {pagination && (
+            <div className="text-center text-sm text-gray-500 mt-4">
+              Mostrando {filteredRestaurants.length} de {pagination.total} restaurantes
+            </div>
+          )}
         </motion.div>
       </div>
     </div>

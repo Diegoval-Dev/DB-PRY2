@@ -4,19 +4,47 @@ interface Restaurant {
   _id: string;
   name: string;
   address: string;
-  specialties: string[];
+  description?: string;
+  rating?: number;
+  specialties?: string[];
+  imageUrls?: string[];
   imageIds?: string[];
 }
 
-export function useRestaurants(token: string | null) {
+interface PaginationInfo {
+  page: number;
+  limit: number;
+  total: number;
+  pages: number;
+}
+
+interface RestaurantsResponse {
+  data: Restaurant[];
+  page: number;
+  limit: number;
+  total: number;
+  pages: number;
+}
+
+export function useRestaurants(token: string | null, page = 1, limit = 10) {
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState('');
+  const [pagination, setPagination] = useState<PaginationInfo | null>(null);
 
   useEffect(() => {
     if (!token) return;
+    
+    setLoading(true);
 
-    fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/restaurants`, {
+    // Construir URL con parámetros de paginación
+    const url = new URL(`${process.env.NEXT_PUBLIC_API_URL}/api/restaurants`);
+    url.searchParams.append('page', page.toString());
+    url.searchParams.append('limit', limit.toString());
+    url.searchParams.append('sortBy', 'name');
+    url.searchParams.append('sortDir', 'asc');
+    
+    fetch(url.toString(), {
       headers: {
         Authorization: `Bearer ${token}`,
       },
@@ -25,10 +53,18 @@ export function useRestaurants(token: string | null) {
         if (!res.ok) throw new Error(await res.text());
         return res.json();
       })
-      .then(setRestaurants)
+      .then((response: RestaurantsResponse) => {
+        setRestaurants(response.data);
+        setPagination({
+          page: response.page,
+          limit: response.limit,
+          total: response.total,
+          pages: response.pages
+        });
+      })
       .catch((err) => setError(err.message))
       .finally(() => setLoading(false));
-  }, [token]);
+  }, [token, page, limit]); // Añadir page y limit como dependencias
 
-  return { restaurants, loading, error };
+  return { restaurants, loading, error, pagination };
 }
