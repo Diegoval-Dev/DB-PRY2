@@ -26,7 +26,15 @@ export default function LoginForm() {
       if (!res.ok) throw new Error(data.error || 'Error desconocido');
 
       login(data.token, data.user);
-      router.push('/client/home');
+      const user = data.user;
+      
+      if (user.role === 'cliente') {
+        router.push('/cliente/home');
+      } else if (user.role === 'repartidor') {
+        router.push('/repartidor/home');
+      } else if (user.role === 'admin') {
+        router.push('/admin/dashboard');
+      }
     } catch (err: any) {
       setError(err.message);
     }

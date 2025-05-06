@@ -141,7 +141,7 @@ export default function OrderTrackingPage() {
         {/* Modal de revisión (aparece cuando showReview es true) */}
         {showReview && (
           <ReviewModal
-            orderId={order.id}
+            orderId={orderId}
             restaurantId={order.restaurantId}
             onClose={() => setShowReview(false)}
           />
