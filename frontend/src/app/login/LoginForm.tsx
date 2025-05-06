@@ -29,7 +29,7 @@ export default function LoginForm() {
       const user = data.user;
       
       if (user.role === 'cliente') {
-        router.push('/cliente/home');
+        router.push('/client/home');
       } else if (user.role === 'repartidor') {
         router.push('/repartidor/home');
       } else if (user.role === 'admin') {
