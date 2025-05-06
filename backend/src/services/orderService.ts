@@ -2,7 +2,7 @@ import OrderModel, { Order } from '../models/Order';
 import { Types } from 'mongoose';
 
 export async function getAllOrders(): Promise<Order[]> {
-  return await OrderModel.find().limit(100);
+  return await OrderModel.find();
 }
 
 export async function getOrderById(id: string): Promise<Order | null> {
