@@ -5,11 +5,14 @@ import { useOrder } from './useOrder';
 import OrderStatusSteps from './OrderStatusSteps';
 import MapView from './MapView';
 import { FiPackage, FiCalendar, FiDollarSign, FiClock, FiHome, FiArrowLeft } from 'react-icons/fi';
+import ReviewModal from './ReviewModal';
+import { useState } from 'react';
 
 export default function OrderTrackingPage() {
   const searchParams = useSearchParams();
   const orderId = searchParams.get('id');
   const router = useRouter();
+  const [showReview, setShowReview] = useState(false);
 
   const { order, loading, error } = useOrder(orderId || '');
 
@@ -122,6 +125,27 @@ export default function OrderTrackingPage() {
             </div>
           </div>
         </div>
+        
+        {/* Botón para calificar restaurante (solo aparece cuando el pedido está entregado) */}
+        {order.status === 'entregado' && (
+          <div className="mt-6 text-center">
+            <button
+              onClick={() => setShowReview(true)}
+              className="bg-[#FF6F61] text-white px-4 py-2 rounded hover:bg-[#e95d53]"
+            >
+              Calificar restaurante
+            </button>
+          </div>
+        )}
+        
+        {/* Modal de revisión (aparece cuando showReview es true) */}
+        {showReview && (
+          <ReviewModal
+            orderId={order.id}
+            restaurantId={order.restaurantId}
+            onClose={() => setShowReview(false)}
+          />
+        )}
       </div>
     </div>
   );
